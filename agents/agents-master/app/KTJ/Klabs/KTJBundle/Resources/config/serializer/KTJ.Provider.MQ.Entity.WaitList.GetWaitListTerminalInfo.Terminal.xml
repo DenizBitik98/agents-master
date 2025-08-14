@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\GetWaitListTerminalInfo\Terminal" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="Terminal" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\GetWaitListTerminalInfo\TerminalInfo" serialized-name="Terminal" access-type="public_method" accessor-getter="getTerminal" accessor-setter="setTerminal"/>
+		<property name="RequestWaitlistItemFunction" expose="true" type="bool" serialized-name="RequestWaitlistItemFunction" access-type="public_method" accessor-getter="getRequestWaitlistItemFunction" accessor-setter="setRequestWaitlistItemFunction"/>
+		<property name="ConfirmBookingFunction" expose="true" type="bool" serialized-name="ConfirmBookingFunction" access-type="public_method" accessor-getter="getConfirmBookingFunction" accessor-setter="setConfirmBookingFunction"/>
+	</class>
+</serializer>

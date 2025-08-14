@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Report\WaitList\Response" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="Terminals" expose="true" type="ArrayCollection&lt;Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Report\WaitList\Terminal&gt;" serialized-name="Terminals" access-type="public_method" accessor-getter="getTerminals" accessor-setter="setTerminals"/>
+	</class>
+</serializer>

@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+	<parameters>
+		<parameter key="ktj.mq.error.cookie.cookie_storage_key">%mq_cookie_storage_name%</parameter>
+	</parameters>
+	<services>
+		<service id="klabs.mq.exception.factory" class="Klabs\KTJBundle\KTJ\Provider\MQ\Exception\ExceptionFactory">
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+		</service>
+	</services>
+</container>

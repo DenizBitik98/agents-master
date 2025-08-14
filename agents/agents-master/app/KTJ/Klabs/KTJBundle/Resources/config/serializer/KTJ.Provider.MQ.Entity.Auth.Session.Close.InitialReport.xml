@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Auth\Session\Close\InitialReport" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="TransactionId" expose="true" type="string" serialized-name="TransactionId" access-type="public_method" accessor-getter="getTransactionId" accessor-setter="setTransactionId"/>
+		<property name="TransactionCommitted" expose="true" type="bool" serialized-name="TransactionCommitted" access-type="public_method" accessor-getter="getTransactionCommitted" accessor-setter="setTransactionCommitted"/>
+		<property name="ReportTimestamp" expose="true" type="DateTime&lt;'Y-m-d\TH:i:s'&gt;" serialized-name="ReportTimestamp" access-type="public_method" accessor-getter="getReportTimestamp" accessor-setter="setReportTimestamp"/>
+		<property name="BlankIdentity" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Auth\Session\Open\BlankIdentity" serialized-name="BlankIdentity" access-type="public_method" accessor-getter="getBlankIdentity" accessor-setter="setBlankIdentity"/>
+		<property name="SalePointNumber" expose="true" type="string" serialized-name="SalePointNumber" access-type="public_method" accessor-getter="getSalePointNumber" accessor-setter="setSalePointNumber"/>
+		<property name="SalePointTerminalNumber" expose="true" type="string" serialized-name="SalePointTerminalNumber" access-type="public_method" accessor-getter="getSalePointTerminalNumber" accessor-setter="setSalePointTerminalNumber"/>
+	</class>
+</serializer>

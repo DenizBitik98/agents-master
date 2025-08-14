@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Message\Error" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="Errors" expose="true" serialized-name="Errors" type="ArrayCollection&lt;Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Message\ErrorData&gt;" access-type="public_method" accessor-getter="getErrors" accessor-setter="setErrors" inline="true"/>
+	</class>
+</serializer>

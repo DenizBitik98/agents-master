@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\DocumentType" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="id"
+		          expose="true"
+		          type="integer"
+		          serialized-name="id"
+		          access-type="public_method"
+		          accessor-getter="getId"
+		          accessor-setter="setId"
+		/>
+	</class>
+</serializer>

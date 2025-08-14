@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\TripRequirement" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="DepartureStationCode" expose="true" type="integer" serialized-name="DepartureStationCode" access-type="public_method" accessor-getter="getDepartureStationCode" accessor-setter="setDepartureStationCode"/>
+		<property name="ArrivalStationCode" expose="true" type="integer" serialized-name="ArrivalStationCode" access-type="public_method" accessor-getter="getArrivalStationCode" accessor-setter="setArrivalStationCode"/>
+		<property name="DepartureDate" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\Period" serialized-name="DepartureDate" access-type="public_method" accessor-getter="getDepartureDate" accessor-setter="setDepartureDate"/>
+		<property name="TrainNumber" expose="true" skipwhenempty="true" type="string" serialized-name="TrainNumber" access-type="public_method" accessor-getter="getTrainNumber" accessor-setter="setTrainNumber"/>
+		<property name="CarType" expose="true" type="int" serialized-name="CarType" access-type="public_method" accessor-getter="getCarType" accessor-setter="setCarType"/>
+		<property name="ServiceClass" expose="true" type="string" serialized-name="ServiceClass" access-type="public_method" accessor-getter="getServiceClass" accessor-setter="setServiceClass"/>
+		<property name="MaxTariff" expose="true" type="float" serialized-name="MaxTariff" access-type="public_method" accessor-getter="getMaxTariff" accessor-setter="setMaxTariff"/>
+	</class>
+</serializer>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Order\Fiscalize\Response" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="FiscalizedRequested" expose="true" type="bool" serialized-name="FiscalizedRequested" access-type="public_method" accessor-getter="getFiscalizedRequested" accessor-setter="setFiscalizedRequested"/>
+		<property name="PaymentsInfo" expose="true" type="ArrayCollection&lt;Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Order\Fiscalize\PaymentInfo&gt;" serialized-name="PaymentsInfo" access-type="public_method" accessor-getter="getPaymentsInfo" accessor-setter="setPaymentsInfo"/>
+	</class>
+</serializer>

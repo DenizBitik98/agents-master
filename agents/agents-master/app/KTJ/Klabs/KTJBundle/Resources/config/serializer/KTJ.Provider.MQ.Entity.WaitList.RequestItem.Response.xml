@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\Response" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="Info" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\ItemInfo" serialized-name="Info" access-type="public_method" accessor-getter="getInfo" accessor-setter="setInfo"/>
+		<property name="TripRequirements" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\TripRequirement" serialized-name="TripRequirements" access-type="public_method" accessor-getter="getTripRequirements" accessor-setter="setTripRequirements"/>
+		<property name="Blanks" expose="true" type="ArrayCollection&lt;Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\BlankInfo&gt;" serialized-name="Blanks" access-type="public_method" accessor-getter="getBlanks" accessor-setter="setBlanks"/>
+		<property name="Order" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\Order" serialized-name="Order" access-type="public_method" accessor-getter="getOrder" accessor-setter="setOrder"/>
+	</class>
+</serializer>

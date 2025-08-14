@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Order\Confirm\BookingInfo" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="BookingTypeSign" expose="true" type="integer" serialized-name="BookingTypeSign" access-type="public_method" accessor-getter="getBookingTypeSign" accessor-setter="setBookingTypeSign"/>
+		<property name="BookingId" expose="true" type="string" serialized-name="BookingId" access-type="public_method" accessor-getter="getBookingId" accessor-setter="setBookingId"/>
+	</class>
+</serializer>

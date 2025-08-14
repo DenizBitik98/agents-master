@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\GetItem\Response" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="Info" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\GetItem\Info" serialized-name="Info" access-type="public_method" accessor-getter="getInfo" accessor-setter="setInfo"/>
+		<property name="TripRequirements" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\GetItem\TripRequirement" serialized-name="TripRequirements" access-type="public_method" accessor-getter="getTripRequirements" accessor-setter="setTripRequirements"/>
+		<property name="Blanks" expose="true" type="ArrayCollection&lt;Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\GetItem\Blank&gt;" serialized-name="Blanks" access-type="public_method" accessor-getter="getBlanks" accessor-setter="setBlanks"/>
+		<property name="Notifications" expose="true" type="array" serialized-name="Notifications" access-type="public_method" accessor-getter="getNotifications" accessor-setter="setNotifications"/>
+		<property name="Booking" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\GetItem\Booking" serialized-name="Booking" access-type="public_method" accessor-getter="getBooking" accessor-setter="setBooking"/>
+		<property name="Order" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\ConfirmBooking\Response" serialized-name="Order" access-type="public_method" accessor-getter="getOrder" accessor-setter="setOrder"/>
+	</class>
+</serializer>

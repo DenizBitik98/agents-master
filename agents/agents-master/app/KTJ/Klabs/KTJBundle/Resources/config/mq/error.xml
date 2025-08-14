@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+	<parameters>
+		<parameter key="ktj.mq.error.cookie.login.default">%mq_default_login%</parameter>
+		<parameter key="ktj.mq.error.cookie.password.default">%mq_default_password%</parameter>
+		<parameter key="ktj.mq.error.cookie.machine_key.default">%mq_default_machine_key%</parameter>
+		<parameter key="ktj.mq.error.cookie.login.confirm">%mq_confirm_login%</parameter>
+		<parameter key="ktj.mq.error.cookie.password.confirm">%mq_confirm_password%</parameter>
+		<parameter key="ktj.mq.error.cookie.machine_key.confirm">%mq_confirm_machine_key%</parameter>
+	</parameters>
+	<services>
+		<service id="klabs.mq.error.default" class="Klabs\KTJBundle\KTJ\Provider\MQ\ErrorHandler\CollectionErrorHandler">
+			<call method="setHandlers">
+				<argument type="iterator">
+					<argument type="service" id="klabs.mq.error.cookie"/>
+				</argument>
+			</call>
+		</service>
+		<service id="klabs.mq.error.cookie" class="Klabs\KTJBundle\KTJ\Provider\MQ\ErrorHandler\CookieErrorHandler">
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq.provider"/>
+			</call>
+			<call method="setDefaultLogin">
+				<argument>%ktj.mq.error.cookie.login.default%</argument>
+			</call>
+			<call method="setDefaultPassword">
+				<argument>%ktj.mq.error.cookie.password.default%</argument>
+			</call>
+			<call method="setDefaultMachineKey">
+				<argument>%ktj.mq.error.cookie.machine_key.default%</argument>
+			</call>
+			<call method="setConfirmLogin">
+				<argument>%ktj.mq.error.cookie.login.confirm%</argument>
+			</call>
+			<call method="setConfirmPassword">
+				<argument>%ktj.mq.error.cookie.password.confirm%</argument>
+			</call>
+			<call method="setConfirmMachineKey">
+				<argument>%ktj.mq.error.cookie.machine_key.confirm%</argument>
+			</call>
+		</service>
+	</services>
+</container>

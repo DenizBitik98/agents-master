@@ -1,0 +1,97 @@
+<?php
+
+return [
+    'blank.electronic travel document' => 'электрондық жол жүру құжаты',
+    'order.number' => 'тапсырыс нөмірі',
+    'blank.travel year' => 'жол жүретін жыл',
+    'blank.passenger count' => 'жолаушылар саны',
+    'train.departure.from' => 'шығуы',
+    'train.arrive.to' => 'жетуі',
+    'blank.service class' => 'қызмет көрсету класы',
+    'blank.carAirConditioning' => 'ауаны баптағыш',
+    'blank.ecoFriendlyToilets' => 'биотуалет',
+    'blank.departure' => 'жөнелтілуі',
+    'blank.arrive' => 'келуі',
+    'train.train' => 'пойыз',
+    'car.car' => 'вагон',
+    'seat.seat' => 'орын',
+    'invoice.ticket kind' => 'билет түрі',
+    'order.tariff types.adult' => 'толық',
+    'order.tariff types.discount' => 'жеңілдік картасы',
+    'order.tariff types.inv' => 'ИНВ',
+    'order.tariff types.kid' => 'бала',
+    'invoice.valuation kind' => 'есептесу түрі',
+    'order.payment types.cash' => 'қ/қ ақшамен',
+    'order.payment types.non cash' => 'қ/қ ақшасыз',
+    'order.bedding' => 'төсек-орын жабдығы',
+    'car.carrier' => 'тасымалдаушы',
+    'invoice.bin' => 'бсн',
+    'invoice.nds property' => 'ҚҚС куәлігі',
+    'order.order number' => 'ордер нөмірі',
+    'seat.cost' => 'билет бағасы',
+    'blank.tariffType' => 'тариф',
+    'ticket.ticket' => 'билет',
+    'blank.berth' => 'плацкарт',
+    'order.service cost' => 'сервис',
+    'order.status of electronic ticket' => 'электрондық билет мәртебесі',
+    'order.electronic registration passed' => 'электрондық тіркеуден өтті',
+    'order.electronic registration not passed' => 'электрондық тіркеуден өткен жоқ',
+    'order.date and time of issuing an electronic ticket' => 'электрондық билет ресімделген күн және уақыты',
+    'order.cancellation of electronic registration is possible until' => 'электрондық тіркеудің күшін көрсетілген уақытқа дейін жоюға болады',
+    'order.departure and arrival time' => 'жөнелтілу және келуі уақыты',
+    'order.arrival with train' => 'келетін пойыздың нөмірі',
+    'invoice.duty information' => 'қызметтік ақпарат',
+    'discount.discount card' => 'жеңілдік картасы',
+    'order.the doors close automatically 5 minutes before departure' => 'пойыздың жүруіне 5 минут қалғанда есіктер автоматт',
+    'order.your e-travel document is valid for' => 'cіздің электрондық жол жүру құжатыңыз пойызға отыруға жарамды.',
+    'your e-travel document is not valid for' => 'Электрондық билет жол жүруге жарамсыз. Пойызден жол жүру үшін билет кассасынан Қазақстан Республикасы аумағында орналасқан жол жүру құжатын (жол жүру құжаты бланкісін) алу қажет.',
+
+    'reservation'=>[
+        'timezone'=>[
+            'departure'=>[
+                '100'=>'Жөнелту жергілікті уақытмен',
+                '101'=>'Жөнелту Астана уақытымен',
+                '102'=>'Жөнелту Москва уақытымен'
+            ],
+            'arrival'=>[
+                '100'=>'Келу жергілікті уақытымен',
+                '101'=>'Келу Астана уақытымен',
+                '102'=>'Келу Москва уақытымен'
+            ]
+        ]
+    ],
+    'invoice'=>[
+        'electronic invoice'=>'электрондық әр түрлі алымдар түбіртекі',
+        'number'=>'түбіртек нөмірі',
+        'ticket number'=>'электрондық билет нөмірі',
+        'order number'=>'ордер нөмірі',
+        'name'=>'аты жөні',
+        'document number'=>'құжат нөмірі',
+        'valuation kind'=>'есептесу түрі',
+        'ticket'=>'билеттің бағасы',
+        'return amount'=>'қайтарылатын сома',
+        'return commission'=>'қайтару операциясы үшін комиссиялық алымы',
+        'information'=>'ақпарат',
+        'return types'=>[
+            'non cash'=>'қ/қ ақшасыз'
+        ],
+        'train'=>'поезд',
+        'car'=>'вагон',
+        'seat'=>'орын',
+        'ticket kind'=>'билет түрі',
+        'ticket route'=>'жүру бағыты',
+        'departure'=>'женелтілуі',
+        'carrier'=>'тасымалдаушы',
+        'bin'=>'бсн',
+        'nds property'=>'ҚҚС куәліuі',
+        'time until departure'=>'поезд женелтілгенге дейінгі уақыты',
+        'return time'=>'қайтарылган күні және уақыты',
+        'fks number'=>'қаржылық нөмір',
+        'terminal'=>'терминал',
+        'duty information'=>'қызметтік ақпарат',
+        'passenger signature'=>'жолаушының қолы',
+        'receipt confirm'=>'мына мөлшерде ақша қаражатын алғанымды растаймын',
+        'contact phones'=>'кассирдің қолы',
+        'kzt'=>'тенге'
+    ]
+];

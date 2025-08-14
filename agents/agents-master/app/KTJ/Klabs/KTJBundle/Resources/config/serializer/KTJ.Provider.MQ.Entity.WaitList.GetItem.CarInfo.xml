@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\GetItem\CarInfo" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="CarNumber" expose="true" type="string" serialized-name="CarNumber" access-type="public_method" accessor-getter="getCarNumber" accessor-setter="setCarNumber"/>
+		<property name="CarType" expose="true" type="integer" serialized-name="CarType" access-type="public_method" accessor-getter="getCarType" accessor-setter="setCarType"/>
+		<property name="CarOwner" expose="true" type="string" serialized-name="CarOwner" access-type="public_method" accessor-getter="getCarOwner" accessor-setter="setCarOwner"/>
+		<property name="SignR0" expose="true" type="string" serialized-name="SignR0" access-type="public_method" accessor-getter="getSignR0" accessor-setter="setSignR0"/>
+		<property name="SeatsCount" expose="true" type="integer" serialized-name="SeatsCount" access-type="public_method" accessor-getter="getSeatsCount" accessor-setter="setSeatsCount"/>
+		<property name="Seats" expose="true" type="string" serialized-name="Seats" access-type="public_method" accessor-getter="getSeats" accessor-setter="setSeats"/>
+	</class>
+</serializer>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Order\Cancel\Response" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="TransactionId" expose="true" type="int" serialized-name="TransactionId" access-type="public_method" accessor-getter="getTransactionId" accessor-setter="setTransactionId"/>
+		<property name="IssueOrderResponse" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Order\Confirm\IssueOrderResponse" serialized-name="IssueOrderResponse" access-type="public_method" accessor-getter="getIssueOrderResponse" accessor-setter="setIssueOrderResponse"/>
+	</class>
+</serializer>

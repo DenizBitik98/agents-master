@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\PreferenceInfo" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="PreferenceKey" expose="true" type="string" serialized-name="PreferenceKey" access-type="public_method" accessor-getter="getPreferenceKey" accessor-setter="setPreferenceKey"/>
+		<property name="PreferenceStateCode" expose="true" type="string" serialized-name="PreferenceStateCode" access-type="public_method" accessor-getter="getPreferenceStateCode" accessor-setter="setPreferenceStateCode"/>
+		<property name="NitCode" expose="true" type="string" serialized-name="NitCode" access-type="public_method" accessor-getter="getNitCode" accessor-setter="setNitCode"/>
+		<property name="ParentDocument" expose="true" type="string" serialized-name="ParentDocument" access-type="public_method" accessor-getter="getParentDocument" accessor-setter="setParentDocument"/>
+		<property name="AccompanyingDocument" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\AccompanyingDocument" serialized-name="AccompanyingDocument" access-type="public_method" accessor-getter="getAccompanyingDocument" accessor-setter="setAccompanyingDocument"/>
+	</class>
+</serializer>

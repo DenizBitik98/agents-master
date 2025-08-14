@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Message\CustomErrorData" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="TransactionId" expose="true" type="string" serialized-name="TransactionId" access-type="public_method" accessor-getter="getTransactionId" accessor-setter="setTransactionId"/>
+		<property name="ExpressRequestType" expose="true" type="int" serialized-name="ExpressRequestType" access-type="public_method" accessor-getter="getExpressRequestType" accessor-setter="setExpressRequestType"/>
+		<property name="WaitlistIdentity" expose="true" type="int" serialized-name="WaitlistIdentity" access-type="public_method" accessor-getter="getWaitlistIdentity" accessor-setter="setWaitlistIdentity"/>
+		<property name="WaitlistStatus" expose="true" type="int" serialized-name="WaitlistStatus" access-type="public_method" accessor-getter="getWaitlistStatus" accessor-setter="setWaitlistStatus"/>
+		<property name="ReferenceId" expose="true" type="int" serialized-name="ReferenceId" access-type="public_method" accessor-getter="getReferenceId" accessor-setter="setReferenceId"/>
+		<property name="StateValue" expose="true" type="string" serialized-name="StateValue" access-type="public_method" accessor-getter="getStateValue" accessor-setter="setStateValue"/>
+		<property name="StateFlowName" expose="true" type="string" serialized-name="StateFlowName" access-type="public_method" accessor-getter="getStateFlowName" accessor-setter="setStateFlowName"/>
+		<property name="Message" expose="true" type="string" serialized-name="Message" access-type="public_method" accessor-getter="getMessage" accessor-setter="setMessage"/>
+	</class>
+</serializer>

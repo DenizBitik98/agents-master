@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service class="Klabs\KTJBundle\KTJ\Utils\Utils" id="klabs_ktj.ktj_utils.utils">
+            <call method="setCarUtils">
+                <argument id="klabs_ktj.ktj_utils.car_utils" type="service"/>
+            </call>
+            <call method="setTicketUtils">
+                <argument id="klabs_ktj.ktj_utils.ticket_utils" type="service"/>
+            </call>
+            <call method="setOrderUtils">
+                <argument id="klabs_ktj.ktj_utils.order_utils" type="service"/>
+            </call>
+        </service>
+        <service class="Klabs\KTJBundle\KTJ\Utils\CarUtils" id="klabs_ktj.ktj_utils.car_utils">
+            <call method="setTranslator">
+                <argument type="service" id="translator"/>
+            </call>
+        </service>
+        <service class="Klabs\KTJBundle\KTJ\Utils\TicketUtils" id="klabs_ktj.ktj_utils.ticket_utils">
+            <call method="setTranslator">
+                <argument type="service" id="translator"/>
+            </call>
+        </service>
+        <service class="Klabs\KTJBundle\KTJ\Utils\OrderUtils" id="klabs_ktj.ktj_utils.order_utils">
+            <call method="setTranslator">
+                <argument type="service" id="translator"/>
+            </call>
+        </service>
+    </services>
+</container>

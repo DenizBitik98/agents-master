@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Order\Reserve\PassengerInfo" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="Document" expose="true" type="string" serialized-name="Document" access-type="public_method" accessor-getter="getDocument" accessor-setter="setDocument"/>
+		<property name="DocumentType" expose="true" type="integer" serialized-name="DocumentType" access-type="public_method" accessor-getter="getDocumentType" accessor-setter="setDocumentType"/>
+		<property name="DocumentNumber" expose="true" type="string" serialized-name="DocumentNumber" access-type="public_method" accessor-getter="getDocumentNumber" accessor-setter="setDocumentNumber"/>
+		<property name="FirstName" expose="true" type="string" serialized-name="FirstName" access-type="public_method" accessor-getter="getFirstName" accessor-setter="setFirstName"/>
+		<property name="LastName" expose="true" type="string" serialized-name="LastName" access-type="public_method" accessor-getter="getLastName" accessor-setter="setLastName"/>
+		<property name="Patronymic" expose="true" type="string" serialized-name="Patronymic" access-type="public_method" accessor-getter="getPatronymic" accessor-setter="setPatronymic"/>
+		<property name="BirthDate" expose="true" type="DateTime&lt;'Y-m-d\TH:i:s'&gt;" serialized-name="BirthDate" access-type="public_method" accessor-getter="getBirthDate" accessor-setter="setBirthDate"/>
+		<property name="Citizenship" expose="true" type="integer" serialized-name="Citizenship" access-type="public_method" accessor-getter="getCitizenship" accessor-setter="setCitizenship"/>
+		<property name="Gender" expose="true" type="integer" serialized-name="Gender" access-type="public_method" accessor-getter="getGender" accessor-setter="setGender"/>
+		<property name="TariffType" expose="true" type="integer" serialized-name="TariffType" access-type="public_method" accessor-getter="getTariffType" accessor-setter="setTariffType"/>
+		<property name="PreferenceInfo" expose="true" type="string" serialized-name="PreferenceInfo" access-type="public_method" accessor-getter="getPreferenceInfo" accessor-setter="setPreferenceInfo"/>
+		<property name="BirthPlace" expose="true" type="integer" serialized-name="BirthPlace" access-type="public_method" accessor-getter="getBirthPlace" accessor-setter="setBirthPlace"/>
+	</class>
+</serializer>

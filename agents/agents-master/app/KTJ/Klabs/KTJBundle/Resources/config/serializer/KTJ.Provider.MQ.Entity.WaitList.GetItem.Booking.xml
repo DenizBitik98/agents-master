@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\GetItem\Booking" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="Booking" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\GetItem\BookingInfo" serialized-name="Booking" access-type="public_method" accessor-getter="getBooking" accessor-setter="setBooking"/>
+		<property name="Info" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\GetItem\Info" serialized-name="Info" access-type="public_method" accessor-getter="getInfo" accessor-setter="setInfo"/>
+	</class>
+</serializer>

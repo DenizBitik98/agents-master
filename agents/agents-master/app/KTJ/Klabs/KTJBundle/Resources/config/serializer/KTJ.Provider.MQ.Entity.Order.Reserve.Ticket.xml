@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Order\Reserve\Ticket" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="Id" expose="true" type="string" serialized-name="Id" access-type="public_method" accessor-getter="getId" accessor-setter="setId"/>
+		<property name="ExpressId" expose="true" type="string" serialized-name="ExpressId" access-type="public_method" accessor-getter="getExpressId" accessor-setter="setExpressId"/>
+		<property name="ObsoleteExpressIdOrBlankIdentity" expose="true" type="string" serialized-name="ObsoleteExpressIdOrBlankIdentity" access-type="public_method" accessor-getter="getObsoleteExpressIdOrBlankIdentity" accessor-setter="setObsoleteExpressIdOrBlankIdentity"/>
+		<property name="Tariff" expose="true" type="float" serialized-name="Tariff" access-type="public_method" accessor-getter="getTariff" accessor-setter="setTariff"/>
+		<property name="GlobalTariffEuro" expose="true" type="float" serialized-name="GlobalTariffEuro" access-type="public_method" accessor-getter="getGlobalTariffEuro" accessor-setter="setGlobalTariffEuro"/>
+		<property name="NDSTariff" expose="true" type="float" serialized-name="NDSTariff" access-type="public_method" accessor-getter="getNDSTariff" accessor-setter="setNDSTariff"/>
+		<property name="BiletTariff" expose="true" type="float" serialized-name="BiletTariff" access-type="public_method" accessor-getter="getBiletTariff" accessor-setter="setBiletTariff"/>
+		<property name="PlackartaTariff" expose="true" type="float" serialized-name="PlackartaTariff" access-type="public_method" accessor-getter="getPlackartaTariff" accessor-setter="setPlackartaTariff"/>
+		<property name="PaidByOrganizationBTariff" expose="true" type="float" serialized-name="PaidByOrganizationBTariff" access-type="public_method" accessor-getter="getPaidByOrganizationBTariff" accessor-setter="setPaidByOrganizationBTariff"/>
+		<property name="PaidByOrganizationPTariff" expose="true" type="float" serialized-name="PaidByOrganizationPTariff" access-type="public_method" accessor-getter="getPaidByOrganizationPTariff" accessor-setter="setPaidByOrganizationPTariff"/>
+		<property name="PaidByOrganizationPWithoutServiceTariff" expose="true" type="float" serialized-name="PaidByOrganizationPWithoutServiceTariff" access-type="public_method" accessor-getter="getPaidByOrganizationPWithoutServiceTariff" accessor-setter="setPaidByOrganizationPWithoutServiceTariff"/>
+		<property name="PaidByOrganizationServiceTariff" expose="true" type="float" serialized-name="PaidByOrganizationServiceTariff" access-type="public_method" accessor-getter="getPaidByOrganizationServiceTariff" accessor-setter="setPaidByOrganizationServiceTariff"/>
+		<property name="PaidByOrganizationServiceNDSTariff" expose="true" type="float" serialized-name="PaidByOrganizationServiceNDSTariff" access-type="public_method" accessor-getter="getPaidByOrganizationServiceNDSTariff" accessor-setter="setPaidByOrganizationServiceNDSTariff"/>
+		<property name="IsTransportRequirements" expose="true" type="bool" serialized-name="IsTransportRequirements" access-type="public_method" accessor-getter="getIsTransportRequirements" accessor-setter="setIsTransportRequirements"/>
+		<property name="ShowPaidByOrganizationServiceTariff" expose="true" type="bool" serialized-name="ShowPaidByOrganizationServiceTariff" access-type="public_method" accessor-getter="getShowPaidByOrganizationServiceTariff" accessor-setter="setShowPaidByOrganizationServiceTariff"/>
+		<property name="IsMilitaryPreference" expose="true" type="bool" serialized-name="IsMilitaryPreference" access-type="public_method" accessor-getter="getIsMilitaryPreference" accessor-setter="setIsMilitaryPreference"/>
+		<property name="ServiceTariff" expose="true" type="float" serialized-name="ServiceTariff" access-type="public_method" accessor-getter="getServiceTariff" accessor-setter="setServiceTariff"/>
+		<property name="ServiceNDSTariff" expose="true" type="float" serialized-name="ServiceNDSTariff" access-type="public_method" accessor-getter="getServiceNDSTariff" accessor-setter="setServiceNDSTariff"/>
+		<property name="TariffLoyality" expose="true" type="float" serialized-name="TariffLoyality" access-type="public_method" accessor-getter="getTariffLoyality" accessor-setter="setTariffLoyality"/>
+		<property name="Passengers" expose="true" type="ArrayCollection&lt;Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Order\Reserve\Passenger&gt;" serialized-name="Passengers" access-type="public_method" accessor-getter="getPassengers" accessor-setter="setPassengers"/>
+		<property name="TariffType" expose="true" type="string" serialized-name="TariffType" access-type="public_method" accessor-getter="getTariffType" accessor-setter="setTariffType"/>
+		<property name="SeatsCount" expose="true" type="integer" serialized-name="SeatsCount" access-type="public_method" accessor-getter="getSeatsCount" accessor-setter="setSeatsCount"/>
+		<property name="SeatNumbers" expose="true" type="float" serialized-name="SeatNumbers" access-type="public_method" accessor-getter="getSeatNumbers" accessor-setter="setSeatNumbers"/>
+		<property name="TicketNumber" expose="true" type="integer" serialized-name="TicketNumber" access-type="public_method" accessor-getter="getTicketNumber" accessor-setter="setTicketNumber"/>
+		<property name="PreferenceTariffInfo" expose="true" type="string" serialized-name="PreferenceTariffInfo" access-type="public_method" accessor-getter="getPreferenceTariffInfo" accessor-setter="setPreferenceTariffInfo"/>
+		<property name="TotalTariff" expose="true" type="float" serialized-name="TotalTariff" access-type="public_method" accessor-getter="getTotalTariff" accessor-setter="setTotalTariff"/>
+		<property name="KtjTariff" expose="true" type="float" serialized-name="KtjTariff" access-type="public_method" accessor-getter="getKtjTariff" accessor-setter="setKtjTariff"/>
+		<property name="DealerTariff" expose="true" type="float" serialized-name="DealerTariff" access-type="public_method" accessor-getter="getDealerTariff" accessor-setter="setDealerTariff"/>
+		<property name="ComissionTariff" expose="true" type="float" serialized-name="ComissionTariff" access-type="public_method" accessor-getter="getComissionTariff" accessor-setter="setComissionTariff"/>
+		<property name="TariffWithoutService" expose="true" type="float" serialized-name="TariffWithoutService" access-type="public_method" accessor-getter="getTariffWithoutService" accessor-setter="setTariffWithoutService"/>
+		<property name="NDSWithoutServiceNDSTariff" expose="true" type="float" serialized-name="NDSWithoutServiceNDSTariff" access-type="public_method" accessor-getter="getNDSWithoutServiceNDSTariff" accessor-setter="setNDSWithoutServiceNDSTariff"/>
+		<property name="PlackartaWithoutServiceTariff" expose="true" type="float" serialized-name="PlackartaWithoutServiceTariff" access-type="public_method" accessor-getter="getPlackartaWithoutServiceTariff" accessor-setter="setPlackartaWithoutServiceTariff"/>
+		<property name="TotalPaymentTariff" expose="true" type="float" serialized-name="TotalPaymentTariff" access-type="public_method" accessor-getter="getTotalPaymentTariff" accessor-setter="setTotalPaymentTariff"/>
+		<property name="BarcodeText" expose="true" type="string" serialized-name="BarcodeText" access-type="public_method" accessor-getter="getBarcodeText" accessor-setter="setBarcodeText"/>
+		<property name="Blanks" expose="true" type="ArrayCollection&lt;Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Order\Reserve\Blank&gt;" serialized-name="Blanks" access-type="public_method" accessor-getter="getBlanks" accessor-setter="setBlanks"/>
+		<property name="ERegistrationPossible" expose="true" type="bool" serialized-name="ERegistrationPossible" access-type="public_method" accessor-getter="getERegistrationPossible" accessor-setter="setERegistrationPossible"/>
+		<property name="TransportRequirementsInfo" expose="string" type="float" serialized-name="TransportRequirementsInfo" access-type="public_method" accessor-getter="getTransportRequirementsInfo" accessor-setter="setTransportRequirementsInfo"/>
+		<property name="PaymentInfo" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Order\Reserve\PaymentInfo" serialized-name="PaymentInfo" access-type="public_method" accessor-getter="getPaymentInfo" accessor-setter="setPaymentInfo"/>
+		<property name="ReissueDetail" expose="true" type="string" serialized-name="ReissueDetail" access-type="public_method" accessor-getter="getReissueDetail" accessor-setter="setReissueDetail"/>
+		<property name="TariffDocumentType" expose="true" type="string" serialized-name="TariffDocumentType" access-type="public_method" accessor-getter="getTariffDocumentType" accessor-setter="setTariffDocumentType"/>
+	</class>
+</serializer>

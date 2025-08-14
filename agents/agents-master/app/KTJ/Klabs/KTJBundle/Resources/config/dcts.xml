@@ -1,0 +1,445 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+	<parameters>
+		<parameter key="ktj.dcts.auth.default.login">%idp_login%</parameter>
+		<parameter key="ktj.dcts.auth.default.password">%idp_password%</parameter>
+		<parameter key="ktj.dcts.auth.default.machine_key">%dcts_machine_key%</parameter>
+	</parameters>
+	<services>
+		<service id="klabs_ktj.ktj_provider_dcts.provider" class="Klabs\KTJBundle\KTJ\Provider\DCTS\Provider">
+			<call method="setSearchController">
+				<argument type="service" id='klabs_ktj.ktj_provider_dcts_controller_search.search_controller'/>
+			</call>
+			<call method="setReportController">
+				<argument type="service" id='klabs_ktj.ktj_provider_dcts_controller_report.report_controller'/>
+			</call>
+			<call method="setAuthController">
+				<argument type="service" id='klabs_ktj.ktj_provider_dcts_controller_auth.auth_controller'/>
+			</call>
+			<call method="setSessionController">
+				<argument type="service" id='klabs_ktj.ktj_provider_dcts_controller_auth.session_controller'/>
+			</call>
+			<call method="setOrderController">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts_controller_order.order_controller"/>
+			</call>
+			<call method="setTicketController">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts_controller_ticket.ticket_controller"/>
+			</call>
+			<call method="setReturnController">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts_controller_return_controller.return_controller"/>
+			</call>
+			<call method="setKtj">
+				<argument type="service" id='Klabs\KTJBundle\KTJ\KTJ'/>
+			</call>
+			<call method="setMachineKey">
+				<argument>%dcts_machine_key%</argument>
+			</call>
+			<call method="setDctsCookieStorageKey">
+				<argument>%dcts_cookie_storage_name%</argument>
+			</call>
+			<call method="setCacheAdapter">
+				<argument type="service" id="app.cache.default"/>
+			</call>
+			<call method="setHttpClient">
+				<argument type="service" id='eight_points_guzzle.client.api_dcts'/>
+			</call>
+		</service>
+		<!-- Controllers -->
+		<!-- Auth controller -->
+		<service id="klabs_ktj.ktj_provider_dcts_controller_auth.auth_controller" class="Klabs\KTJBundle\KTJ\Provider\DCTS\Controller\Auth\AuthController">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts.provider"/>
+			</call>
+			<call method="setAuthUri">
+				<argument>%dcts_uri_auth%</argument>
+			</call>
+			<call method="setLogin">
+				<argument>%ktj.dcts.auth.default.login%</argument>
+			</call>
+			<call method="setPassword">
+				<argument>%ktj.dcts.auth.default.password%</argument>
+			</call>
+			<call method="setMachineKey">
+				<argument>%ktj.dcts.auth.default.machine_key%</argument>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_dcts_controller_auth.session_controller" class="Klabs\KTJBundle\KTJ\Provider\DCTS\Controller\Auth\SessionController">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts.provider"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer.serializer"/>
+			</call>
+			<call method="setOpenUri">
+				<argument>%dcts_uri_session_open%</argument>
+			</call>
+			<call method="setCloseUri">
+				<argument>%dcts_uri_session_close%</argument>
+			</call>
+		</service>
+		<!-- report controller -->
+		<service id="klabs_ktj.ktj_provider_dcts_controller_report.station_controller" class="Klabs\KTJBundle\KTJ\Provider\DCTS\Controller\Report\StationController">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts.provider"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+			<call method="setScheduleUri">
+				<argument>%dcts_uri_station_schedule%</argument>
+			</call>
+			<call method="setDataUri">
+				<argument>%dcts_uri_station_list%</argument>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_dcts_controller_report.ticket_controller" class="Klabs\KTJBundle\KTJ\Provider\DCTS\Controller\Report\TicketController">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts.provider"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+			<call method="setStatusUri">
+				<argument>%dcts_uri_ticket_inquiry%</argument>
+			</call>
+			<call method="setTerminalInfoUri">
+				<argument>%dcts_uri_ticket_terminal_info%</argument>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_dcts_controller_report.order_controller" class="Klabs\KTJBundle\KTJ\Provider\DCTS\Controller\Report\OrderController">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts.provider"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+			<call method="setExpressStatusUri">
+				<argument>%dcts_uri_order_express_status%</argument>
+			</call>
+			<call method="setStatusUri">
+				<argument>%dcts_uri_order_status%</argument>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_dcts_controller_report.payment_controller" class="Klabs\KTJBundle\KTJ\Provider\DCTS\Controller\Report\PaymentController">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts.provider"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+			<call method="setSignatureUrl">
+				<argument>%dcts_uri_confirm_signature%</argument>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_dcts_controller_report.train_controller" class="Klabs\KTJBundle\KTJ\Provider\DCTS\Controller\Report\TrainController">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts.provider"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+			<call method="setRouteUri">
+				<argument>%dcts_uri_trains_route%</argument>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_dcts_controller_report.return_controller" class="Klabs\KTJBundle\KTJ\Provider\DCTS\Controller\Report\ReturnController">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts.provider"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+			<call method="setOrderUri">
+				<argument>%dcts_uri_order_inquiry%</argument>
+			</call>
+			<call method="setTicketInfoUri">
+				<argument>%dcts_uri_ticket_inquiry%</argument>
+			</call>
+			<call method="setStatusUri">
+				<argument>%dcts_uri_order_return_status%</argument>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_dcts_controller_report.board_controller" class="Klabs\KTJBundle\KTJ\Provider\DCTS\Controller\Report\BoardController">
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts.provider"/>
+			</call>
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+			<call method="setBoardPassUri">
+				<argument>%dcts_uri_report_boarding_pass%</argument>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_dcts_controller_report.report_controller" class="Klabs\KTJBundle\KTJ\Provider\DCTS\Controller\Report\ReportController">
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts.provider"/>
+			</call>
+			<call method="setReportTicketController">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts_controller_report.ticket_controller"/>
+			</call>
+			<call method="setReportOrderController">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts_controller_report.order_controller"/>
+			</call>
+			<call method="setReportTrainController">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts_controller_report.train_controller"/>
+			</call>
+			<call method="setReportStationController">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts_controller_report.station_controller"/>
+			</call>
+			<call method="setReportPaymentController">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts_controller_report.payment_controller"/>
+			</call>
+			<call method="setReportReturnController">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts_controller_report.return_controller"/>
+			</call>
+			<call method="setReportBoardController">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts_controller_report.board_controller"/>
+			</call>
+		</service>
+		<!-- search controller -->
+		<service id="klabs_ktj.ktj_provider_dcts_controller_search.train_controller" class="Klabs\KTJBundle\KTJ\Provider\DCTS\Controller\Search\TrainController">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts.provider"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+			<call method="setSearchUri">
+				<argument>%dcts_uri_search_trains%</argument>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_dcts_controller_search.car_controller" class="Klabs\KTJBundle\KTJ\Provider\DCTS\Controller\Search\CarController">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts.provider"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+			<call method="setSearchUri">
+				<argument>%dcts_uri_search_cars%</argument>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_dcts_controller_search.search_controller" class="Klabs\KTJBundle\KTJ\Provider\DCTS\Controller\Search\SearchController">
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts.provider"/>
+			</call>
+			<call method="setSearchTrainController">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts_controller_search.train_controller"/>
+			</call>
+			<call method="setSearchCarController">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts_controller_search.car_controller"/>
+			</call>
+		</service>
+		<!-- order controller -->
+		<service id="klabs_ktj.ktj_provider_dcts_controller_order.reserve_controller" class="Klabs\KTJBundle\KTJ\Provider\DCTS\Controller\Order\ReserveController">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts.provider"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+			<call method="setReserveUri">
+				<argument>%dcts_uri_ticket_reserve%</argument>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_dcts_controller_order.confirm_controller" class="Klabs\KTJBundle\KTJ\Provider\DCTS\Controller\Order\ConfirmController">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts.provider"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+			<call method="setConfirmUri">
+				<argument>%dcts_uri_ticket_confirmation%</argument>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_dcts_controller_order.return_controller" class="Klabs\KTJBundle\KTJ\Provider\DCTS\Controller\Order\ReturnController">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts.provider"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+			<call method="setReturnUri">
+				<argument>%dcts_uri_order_cancel%</argument>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_dcts_controller_order.order_controller" class="Klabs\KTJBundle\KTJ\Provider\DCTS\Controller\Order\OrderController">
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts.provider"/>
+			</call>
+			<call method="setReserveController">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts_controller_order.reserve_controller"/>
+			</call>
+			<call method="setConfirmController">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts_controller_order.confirm_controller"/>
+			</call>
+			<call method="setReturnController">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts_controller_order.return_controller"/>
+			</call>
+		</service>
+		<!-- ticket controller -->
+		<service id="klabs_ktj.ktj_provider_dcts_controller_ticket.return_controller" class="Klabs\KTJBundle\KTJ\Provider\DCTS\Controller\Ticket\ReturnController">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts.provider"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+			<call method="setReturnUri">
+				<argument>%dcts_uri_ticket_cancel%</argument>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_dcts_controller_ticket.ticket_controller" class="Klabs\KTJBundle\KTJ\Provider\DCTS\Controller\Ticket\TicketController">
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts.provider"/>
+			</call>
+			<call method="setReturnController">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts_controller_ticket.return_controller"/>
+			</call>
+		</service>
+		<!-- return controller -->
+		<service id="klabs_ktj.ktj_provider_dcts_controller_return_controller.apply_controller" class="Klabs\KTJBundle\KTJ\Provider\DCTS\Controller\ReturnController\ApplyController">
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts.provider"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer.serializer"/>
+			</call>
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setSuccessUri">
+				<argument>%dcts_uri_apply_success_return%</argument>
+			</call>
+			<call method="setFailUri">
+				<argument>%dcts_uri_apply_fail_return%</argument>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_dcts_controller_return_controller.signature_controller" class="Klabs\KTJBundle\KTJ\Provider\DCTS\Controller\ReturnController\SignatureController">
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts.provider"/>
+			</call>
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer.serializer"/>
+			</call>
+			<call method="setSignatureUri">
+				<argument>%dcts_uri_refund_signature%</argument>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_dcts_controller_return_controller.return_controller" class="Klabs\KTJBundle\KTJ\Provider\DCTS\Controller\ReturnController\ReturnController">
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts.provider"/>
+			</call>
+			<call method="setSignatureController">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts_controller_return_controller.signature_controller"/>
+			</call>
+			<call method="setApplyController">
+				<argument type="service" id="klabs_ktj.ktj_provider_dcts_controller_return_controller.apply_controller"/>
+			</call>
+		</service>
+		<!-- Event listener -->
+		<service id="Klabs\KTJBundle\KTJ\Provider\DCTS\EventListener\CookieEventListener">
+			<call method="setCacheAdapter">
+				<argument type="service" id="app.cache.default"/>
+			</call>
+			<call method="setDctsCookieStorageKey">
+				<argument>%dcts_cookie_storage_name%</argument>
+			</call>
+			<tag name="kernel.event_listener" event="ktj.dcts.reservation.reserve.before" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.dcts.ticket.return.before" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.dcts.search.train.before" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.dcts.search.car.before" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.dcts.report.ticket.status.before" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.dcts.report.ticket.terminal info.before" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.dcts.report.order.status.before" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.dcts.report.station.schedule.before" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.dcts.report.station.data.before" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.dcts.report.train.route.before" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.dcts.report.payment.signature.before" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.dcts.report.return.order.before" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.dcts.report.return.ticket.before" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.dcts.report.return.status.before" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.dcts.report.board.boarding-pass.before" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.dcts.return.apply.success.before" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.dcts.return.apply.fail.before" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.dcts.auth.session.close.before" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.dcts.auth.session.open.before" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.dcts.return.signature.before" method="setProviderCookies"/>
+		</service>
+		<!-- Event subscribers -->
+		<service id="Klabs\KTJBundle\KTJ\Provider\DCTS\EventSubscriber\Auth\AuthSubscriber">
+			<call method="setIdpCookieStorageKey">
+				<argument>%idp_cookie_storage_name%</argument>
+			</call>
+			<call method="setDctsCookieStorageKey">
+				<argument>%dcts_cookie_storage_name%</argument>
+			</call>
+			<call method="setCacheAdapter">
+				<argument type="service" id="app.cache.default"/>
+			</call>
+			<tag name="kernel.event_subscriber"/>
+		</service>
+		<service id="Klabs\KTJBundle\KTJ\Provider\DCTS\EventSubscriber\Reservation\ReservationConfirmSubscriber">
+			<call method="setKtj">
+				<argument type="service" id="Klabs\KTJBundle\KTJ\KTJ"/>
+			</call>
+			<tag name="kernel.event_subscriber"/>
+		</service>
+		<service id="Klabs\KTJBundle\KTJ\Provider\DCTS\EventSubscriber\ReturnController\ReturnApplySubscriber">
+			<call method="setKtj">
+				<argument type="service" id="Klabs\KTJBundle\KTJ\KTJ"/>
+			</call>
+			<tag name="kernel.event_subscriber"/>
+		</service>
+	</services>
+</container>

@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+	<imports>
+		<import resource="error.xml"/>
+		<import resource="controller.xml"/>
+	</imports>
+	<parameters>
+		<parameter key="ktj.mq.cookie.storage_name.seat_reserve">mq.storage.cookie.seatReserve</parameter>
+	</parameters>
+	<services>
+		<service id="klabs_ktj.ktj_provider_mq.provider.seat_reserve" class="Klabs\KTJBundle\KTJ\Provider\MQ\Provider">
+			<call method="setAuthController">
+				<argument type="service" id='klabs_ktj.ktj_provider_mq_controller_auth.auth_controller.seat_reserve'/>
+			</call>
+			<call method="setSessionController">
+				<argument type="service" id='klabs_ktj.ktj_provider_mq_controller_auth.session_controller.seat_reserve'/>
+			</call>
+			<call method="setExpressCommitController">
+				<argument type="service" id='klabs_ktj.ktj_provider_mq_controller_express_commit.express_commit_controller.seat_reserve'/>
+			</call>
+			<call method="setReportController">
+				<argument type="service" id='klabs_ktj.ktj_provider_mq_controller_report.report_controller.seat_reserve'/>
+			</call>
+			<call method="setQueueController">
+				<argument type="service" id='klabs_ktj.ktj_provider_mq_controller_queue.queue_controller.seat_reserve'/>
+			</call>
+			<call method="setOrderController">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq_controller_order.order_controller.seat_reserve"/>
+			</call>
+			<call method="setSeatReserveController">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq_controller_report.seat_reserve_controller.seat_reserve"/>
+			</call>
+			<call method="setKtj">
+				<argument type="service" id='Klabs\KTJBundle\KTJ\KTJ'/>
+			</call>
+			<call method="setMachineKey">
+				<argument>%seat_reserve_machine_key%</argument>
+			</call>
+			<call method="setCacheAdapter">
+				<argument type="service" id="app.cache.default"/>
+			</call>
+			<call method="setHttpClient">
+				<argument type="service" id='eight_points_guzzle.client.api_mq'/>
+			</call>
+			<call method="setQueueId">
+				<argument type="string">_sr</argument>
+			</call>
+		</service>
+		<!-- Event listeners -->
+		<service class="Klabs\KTJBundle\KTJ\Provider\MQ\EventListener\CookieEventListener" id="klabs_ktj.ktj_provider_mq_event_listener.cookie_event_listener.seat_reserve">
+			<call method="setCacheAdapter">
+				<argument type="service" id="app.cache.default"/>
+			</call>
+			<call method="setCacheAdapterStorageKey">
+				<argument>%ktj.mq.cookie.storage_name.seat_reserve%</argument>
+			</call>
+			<tag name="kernel.event_listener" event="ktj.mq.report.station.data.before_sr" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.mq.queue.requestItem.before_sr" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.mq.queue.confirmItem.before_sr" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.mq.queue.getRequestedItems.before_sr" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.mq.queue.getItem.before_sr" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.mq.report.waitlist.display_terminals.before_sr" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.mq.report.ticket.terminal info.before_sr" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.mq.queue.confirmBooking.before_sr" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.mq.reservation.confirm.before_sr" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.mq.reservation.fiscalize.before_sr" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.mq.reservation.finalize.before_sr" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.mq.reservation.cancel.before_sr" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.mq.report.ticket.status.before_sr" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.mq.seat_reserve.requestItem.before_sr" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.mq.seat_reserve.confirm.before_sr" method="setProviderCookies"/>
+			<tag name="kernel.event_listener" event="ktj.mq.auth.session.info.before_sr" method="setProviderCookies"/>
+		</service>
+	</services>
+</container>

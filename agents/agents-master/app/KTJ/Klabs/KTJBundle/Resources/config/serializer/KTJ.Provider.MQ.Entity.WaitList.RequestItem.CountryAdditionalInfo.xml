@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\CountryAdditionalInfo" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="RailwayCode"
+		          expose="true"
+		          type="string"
+		          serialized-name="RailwayCode"
+		          access-type="public_method"
+		          accessor-getter="getRailwayCode"
+		          accessor-setter="setRailwayCode"
+		/>
+		<property name="TravelDistance"
+		          expose="true"
+		          type="integer"
+		          serialized-name="TravelDistance"
+		          access-type="public_method"
+		          accessor-getter="getTravelDistance"
+		          accessor-setter="setTravelDistance"
+		/>
+	</class>
+</serializer>

@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+	<imports>
+		<import resource="idp.xml"/>
+		<import resource="dcts.xml"/>
+		<import resource="mq/provider.xml"/>
+		<import resource="log.xml"/>
+		<import resource="utils.xml"/>
+	</imports>
+	<services>
+		<!-- Twigs -->
+		<service id="Klabs\KTJBundle\Twig\ErrorDescriberTwigs">
+			<call method="setErrorDescriber">
+				<argument type="service" id="Klabs\KTJBundle\ErrorDescriber\ErrorDescriber"/>
+			</call>
+			<tag name="twig.extension"/>
+		</service>
+		<service id="Klabs\KTJBundle\Twig\CarExtension">
+			<call method="setKtjUtils">
+				<argument type="service" id="klabs_ktj.ktj_utils.utils"/>
+			</call>
+			<tag name="twig.extension"/>
+		</service>
+		<!-- Errors -->
+		<service id="Klabs\KTJBundle\ErrorDescriber\ErrorDescriber">
+			<call method="setTranslator">
+				<argument type="service" id="translator"/>
+			</call>
+		</service>
+		<!-- KTJ -->
+		<service id="Klabs\KTJBundle\KTJ\KTJ" class="Klabs\KTJBundle\KTJ\KTJ">
+			<call method="setProvider">
+				<argument type="service" id='klabs_ktj.ktj_provider_dcts.provider'/>
+			</call>
+			<call method="setIdpClient">
+				<argument type="service" id='Klabs\KTJBundle\IdP\IdPClientInterface'/>
+			</call>
+			<call method="setKtjUtils">
+				<argument type="service" id="klabs_ktj.ktj_utils.utils"/>
+			</call>
+		</service>
+	</services>
+</container>

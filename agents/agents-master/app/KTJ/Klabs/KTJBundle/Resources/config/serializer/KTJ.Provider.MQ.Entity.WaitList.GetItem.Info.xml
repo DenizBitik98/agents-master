@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\GetItem\Info" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="Identity" expose="true" type="integer" serialized-name="Identity" access-type="public_method" accessor-getter="getIdentity" accessor-setter="setIdentity"/>
+		<property name="ProtectionCode" expose="true" type="string" serialized-name="ProtectionCode" access-type="public_method" accessor-getter="getProtectionCode" accessor-setter="setProtectionCode"/>
+		<property name="RequestTimestamp" expose="true" type="DateTime&lt;'Y-m-d\TH:i:s.u'&gt;" serialized-name="RequestTimestamp" access-type="public_method" accessor-getter="getRequestTimestamp" accessor-setter="setRequestTimestamp"/>
+		<property name="RequestTerminal" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\GetItem\RequestTerminal" serialized-name="RequestTerminal" access-type="public_method" accessor-getter="getRequestTerminal" accessor-setter="setRequestTerminal"/>
+		<property name="Status" expose="true" type="integer" serialized-name="Status" access-type="public_method" accessor-getter="getStatus" accessor-setter="setStatus"/>
+		<property name="ArrivalTimestamp" expose="true" type="DateTime&lt;'Y-m-d\TH:i:s'&gt;" serialized-name="ArrivalTimestamp" access-type="public_method" accessor-getter="getArrivalTimestamp" accessor-setter="setArrivalTimestamp"/>
+		<property name="ServiceClass" expose="true" type="string" serialized-name="ServiceClass" access-type="public_method" accessor-getter="getServiceClass" accessor-setter="setServiceClass"/>
+		<property name="ReferenceSingleTariff" expose="true" type="float" serialized-name="ReferenceSingleTariff" access-type="public_method" accessor-getter="getReferenceSingleTariff" accessor-setter="setReferenceSingleTariff"/>
+	</class>
+</serializer>

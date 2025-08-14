@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\Email" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="EmailAddress" expose="true" type="string" serialized-name="EmailAddress" access-type="public_method" accessor-getter="getEmailAddress" accessor-setter="setEmailAddress"/>
+	</class>
+</serializer>

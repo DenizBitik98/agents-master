@@ -1,0 +1,9 @@
+# Исключаем лишнее из build–context
+docker/volume/
+docker/redis/
+
+# Вещи, которые не нужны на этапе сборки образа
+vendor/
+node_modules/
+.git
+*.log

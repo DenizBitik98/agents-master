@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Order\Confirm\Passenger" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="Document" expose="true" type="string" serialized-name="Document" access-type="public_method" accessor-getter="getDocument" accessor-setter="setDocument"/>
+		<property name="PassengerDocumentType" expose="true" type="integer" serialized-name="PassengerDocumentType" access-type="public_method" accessor-getter="getPassengerDocumentType" accessor-setter="setPassengerDocumentType"/>
+		<property name="PassengerDocumentNumber" expose="true" type="string" serialized-name="PassengerDocumentNumber" access-type="public_method" accessor-getter="getPassengerDocumentNumber" accessor-setter="setPassengerDocumentNumber"/>
+		<property name="FullName" expose="true" type="string" serialized-name="FullName" access-type="public_method" accessor-getter="getFullName" accessor-setter="setFullName"/>
+		<property name="FirstName" expose="true" type="string" serialized-name="FirstName" access-type="public_method" accessor-getter="getFirstName" accessor-setter="setFirstName"/>
+		<property name="LastName" expose="true" type="string" serialized-name="LastName" access-type="public_method" accessor-getter="getLastName" accessor-setter="setLastName"/>
+		<property name="Patronymic" expose="true" type="string" serialized-name="Patronymic" access-type="public_method" accessor-getter="getPatronymic" accessor-setter="setPatronymic"/>
+		<property name="DateOfBirth" expose="true" type="DateTime&lt;'Y-m-d\TH:i:s'&gt;" serialized-name="DateOfBirth" access-type="public_method" accessor-getter="getDateOfBirth" accessor-setter="setDateOfBirth"/>
+		<property name="Citizenship" expose="true" type="integer" serialized-name="Citizenship" access-type="public_method" accessor-getter="getCitizenship" accessor-setter="setCitizenship"/>
+		<property name="Gender" expose="true" type="integer" serialized-name="Gender" access-type="public_method" accessor-getter="getGender" accessor-setter="setGender"/>
+	</class>
+</serializer>

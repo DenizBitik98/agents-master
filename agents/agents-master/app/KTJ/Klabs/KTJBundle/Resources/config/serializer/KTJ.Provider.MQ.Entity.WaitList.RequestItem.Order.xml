@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\Order" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="OrderCancellations" expose="true" type="ArrayCollection&lt;Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\CancelOrder&gt;" serialized-name="OrderCancellations" access-type="public_method" accessor-getter="getOrderCancellations" accessor-setter="setOrderCancellations"/>
+		<property name="OrderConfirmations" expose="true" type="ArrayCollection&lt;Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\ConfirmOrder&gt;" serialized-name="OrderConfirmations" access-type="public_method" accessor-getter="getOrderConfirmations" accessor-setter="setOrderConfirmations"/>
+		<property name="TransactionId" expose="true" type="integer" serialized-name="TransactionId" access-type="public_method" accessor-getter="getTransactionId" accessor-setter="setTransactionId"/>
+		<property name="OrderId" expose="true" type="integer" serialized-name="OrderId" access-type="public_method" accessor-getter="getOrderId" accessor-setter="setOrderId"/>
+		<property name="OrderExpressId" expose="true" type="string" serialized-name="OrderExpressId" access-type="public_method" accessor-getter="getOrderExpressId" accessor-setter="setOrderExpressId"/>
+		<property name="CarrierName" expose="true" type="string" serialized-name="CarrierName" access-type="public_method" accessor-getter="getCarrierName" accessor-setter="setCarrierName"/>
+		<property name="CarrierCode" expose="true" type="string" serialized-name="CarrierCode" access-type="public_method" accessor-getter="getCarrierCode" accessor-setter="setCarrierCode"/>
+		<property name="CarrierINN" expose="true" type="string" serialized-name="CarrierINN" access-type="public_method" accessor-getter="getCarrierINN" accessor-setter="setCarrierINN"/>
+		<property name="OrderDateTime" expose="true" type="DateTime&lt;'Y-m-d\TH:i:s'&gt;" serialized-name="OrderDateTime" access-type="public_method" accessor-getter="getOrderDateTime" accessor-setter="setOrderDateTime"/>
+		<property name="DepartureTrainNumber" expose="true" type="string" serialized-name="DepartureTrainNumber" access-type="public_method" accessor-getter="getDepartureTrainNumber" accessor-setter="setDepartureTrainNumber"/>
+		<property name="DepartureDateTime" expose="true" type="DateTime&lt;'Y-m-d\TH:i:s'&gt;" serialized-name="DepartureDateTime" access-type="public_method" accessor-getter="getDepartureDateTime" accessor-setter="setDepartureDateTime"/>
+		<property name="DepartureStationName" expose="true" type="string" serialized-name="DepartureStationName" access-type="public_method" accessor-getter="getDepartureStationName" accessor-setter="setDepartureStationName"/>
+		<property name="DepartureStationCode" expose="true" type="integer" serialized-name="DepartureStationCode" access-type="public_method" accessor-getter="getDepartureStationCode" accessor-setter="setDepartureStationCode"/>
+		<property name="ArrivalStationName" expose="true" type="string" serialized-name="ArrivalStationName" access-type="public_method" accessor-getter="getArrivalStationName" accessor-setter="setArrivalStationName"/>
+		<property name="ArrivalStationCode" expose="true" type="integer" serialized-name="ArrivalStationCode" access-type="public_method" accessor-getter="getArrivalStationCode" accessor-setter="setArrivalStationCode"/>
+		<property name="CarNumber" expose="true" type="string" serialized-name="CarNumber" access-type="public_method" accessor-getter="getCarNumber" accessor-setter="setCarNumber"/>
+		<property name="CarOwner" expose="true" type="string" serialized-name="CarOwner" access-type="public_method" accessor-getter="getCarOwner" accessor-setter="setCarOwner"/>
+		<property name="CarType" expose="true" type="integer" serialized-name="CarType" access-type="public_method" accessor-getter="getCarType" accessor-setter="setCarType"/>
+		<property name="ServiceClass" expose="true" type="string" serialized-name="ServiceClass" access-type="public_method" accessor-getter="getServiceClass" accessor-setter="setServiceClass"/>
+		<property name="CarCarrierName" expose="true" type="string" serialized-name="CarCarrierName" access-type="public_method" accessor-getter="getCarCarrierName" accessor-setter="setCarCarrierName"/>
+		<property name="PaymentType" expose="true" type="integer" serialized-name="PaymentType" access-type="public_method" accessor-getter="getPaymentType" accessor-setter="setPaymentType"/>
+		<property name="PaymentOrderPayerCode" expose="string" type="integer" serialized-name="PaymentOrderPayerCode" access-type="public_method" accessor-getter="getPaymentOrderPayerCode" accessor-setter="setPaymentOrderPayerCode"/>
+		<property name="TimeDescription" expose="true" type="string" serialized-name="TimeDescription" access-type="public_method" accessor-getter="getTimeDescription" accessor-setter="setTimeDescription"/>
+		<property name="SignR0" expose="true" type="string" serialized-name="SignR0" access-type="public_method" accessor-getter="getSignR0" accessor-setter="setSignR0"/>
+		<property name="CarGender" expose="true" type="integer" serialized-name="CarGender" access-type="public_method" accessor-getter="getCarGender" accessor-setter="setCarGender"/>
+		<property name="ArrivalTrainNumber" expose="true" type="string" serialized-name="ArrivalTrainNumber" access-type="public_method" accessor-getter="getArrivalTrainNumber" accessor-setter="setArrivalTrainNumber"/>
+		<property name="ArrivalDateTime" expose="true" type="DateTime&lt;'Y-m-d\TH:i:s'&gt;" serialized-name="ArrivalDateTime" access-type="public_method" accessor-getter="getArrivalDateTime" accessor-setter="setArrivalDateTime"/>
+		<property name="Tickets" expose="true" type="ArrayCollection&lt;Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\Ticket&gt;" serialized-name="Tickets" access-type="public_method" accessor-getter="getTickets" accessor-setter="setTickets"/>
+		<property name="TerminalInfo" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\TerminalInfo" serialized-name="TerminalInfo" access-type="public_method" accessor-getter="getTerminalInfo" accessor-setter="setTerminalInfo"/>
+		<property name="PayerInfo" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\PayerInfo" serialized-name="PayerInfo" access-type="public_method" accessor-getter="getPayerInfo" accessor-setter="setPayerInfo"/>
+		<property name="IsWithoutBedding" expose="true" type="bool" serialized-name="IsWithoutBedding" access-type="public_method" accessor-getter="getIsWithoutBedding" accessor-setter="setIsWithoutBedding"/>
+		<property name="RoadCode" expose="true" type="string" serialized-name="RoadCode" access-type="public_method" accessor-getter="getRoadCode" accessor-setter="setRoadCode"/>
+		<property name="BookingInfo" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\BookingInfo" serialized-name="BookingInfo" access-type="public_method" accessor-getter="getBookingInfo" accessor-setter="setBookingInfo"/>
+		<property name="TransportCommunicationType" expose="true" type="integer" serialized-name="TransportCommunicationType" access-type="public_method" accessor-getter="getTransportCommunicationType" accessor-setter="setTransportCommunicationType"/>
+		<property name="TerminalIdentity" expose="true" type="string" serialized-name="TerminalIdentity" access-type="public_method" accessor-getter="getTerminalIdentity" accessor-setter="setTerminalIdentity"/>
+		<property name="FKSNumber" expose="true" type="string" serialized-name="FKSNumber" access-type="public_method" accessor-getter="getFKSNumber" accessor-setter="setFKSNumber"/>
+		<property name="OrderNumberInSystem" expose="true" type="string" serialized-name="OrderNumberInSystem" access-type="public_method" accessor-getter="getOrderNumberInSystem" accessor-setter="setOrderNumberInSystem"/>
+		<property name="GroupMembersCount" expose="true" type="integer" serialized-name="GroupMembersCount" access-type="public_method" accessor-getter="getGroupMembersCount" accessor-setter="setGroupMembersCount"/>
+		<property name="InvalidOrder" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\InvalidOrder" serialized-name="InvalidOrder" access-type="public_method" accessor-getter="getInvalidOrder" accessor-setter="setInvalidOrder"/>
+		<property name="AllOrderTicketsLink" expose="true" type="bool" serialized-name="AllOrderTicketsLink" access-type="public_method" accessor-getter="getAllOrderTicketsLink" accessor-setter="setAllOrderTicketsLink"/>
+		<property name="DepartureAndArrivalTimeInfo" expose="true" type="string" serialized-name="DepartureAndArrivalTimeInfo" access-type="public_method" accessor-getter="getDepartureAndArrivalTimeInfo" accessor-setter="setDepartureAndArrivalTimeInfo"/>
+	</class>
+</serializer>

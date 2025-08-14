@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+	<parameters>
+		<parameter key="ktj.mq.error.cookie.login.claim_return">%claim_return_login%</parameter>
+		<parameter key="ktj.mq.error.cookie.password.claim_return">%claim_return_password%</parameter>
+		<parameter key="ktj.mq.error.cookie.machine_key.claim_return">%claim_return_machine_key%</parameter>
+	</parameters>
+	<services>
+		<service id="klabs.mq.error.claim_return" class="Klabs\KTJBundle\KTJ\Provider\MQ\ErrorHandler\CollectionErrorHandler">
+			<call method="setHandlers">
+				<argument type="iterator">
+					<argument type="service" id="klabs.mq.error.cookie.claim_return"/>
+				</argument>
+			</call>
+		</service>
+		<service id="klabs.mq.error.cookie.claim_return" class="Klabs\KTJBundle\KTJ\Provider\MQ\ErrorHandler\CookieErrorHandler">
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq.provider.claim_return"/>
+			</call>
+			<call method="setDefaultLogin">
+				<argument>%ktj.mq.error.cookie.login.claim_return%</argument>
+			</call>
+			<call method="setDefaultPassword">
+				<argument>%ktj.mq.error.cookie.password.claim_return%</argument>
+			</call>
+			<call method="setDefaultMachineKey">
+				<argument>%ktj.mq.error.cookie.machine_key.claim_return%</argument>
+			</call>
+			<call method="setConfirmLogin">
+				<argument>%ktj.mq.error.cookie.login.claim_return%</argument>
+			</call>
+			<call method="setConfirmPassword">
+				<argument>%ktj.mq.error.cookie.password.claim_return%</argument>
+			</call>
+			<call method="setConfirmMachineKey">
+				<argument>%ktj.mq.error.cookie.machine_key.claim_return%</argument>
+			</call>
+		</service>
+	</services>
+</container>

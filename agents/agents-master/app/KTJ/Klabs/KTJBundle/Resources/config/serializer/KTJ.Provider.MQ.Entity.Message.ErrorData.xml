@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Message\ErrorData" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="ServerStatus" expose="true" type="string" serialized-name="ServerStatus" access-type="public_method" accessor-getter="getServerStatus" accessor-setter="setServerStatus"/>
+		<property name="ErrorMessage" expose="true" type="string" serialized-name="ErrorMessage" access-type="public_method" accessor-getter="getErrorMessage" accessor-setter="setErrorMessage"/>
+		<property name="PropertyName" expose="true" type="string" serialized-name="PropertyName" access-type="public_method" accessor-getter="getPropertyName" accessor-setter="setPropertyName"/>
+		<property name="AttemptedValue" expose="true" type="string" serialized-name="AttemptedValue" access-type="public_method" accessor-getter="getAttemptedValue" accessor-setter="setAttemptedValue"/>
+		<property name="CustomErrorData" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Message\CustomErrorData" serialized-name="CustomErrorData" access-type="public_method" accessor-getter="getCustomErrorData" accessor-setter="setCustomErrorData"/>
+	</class>
+</serializer>

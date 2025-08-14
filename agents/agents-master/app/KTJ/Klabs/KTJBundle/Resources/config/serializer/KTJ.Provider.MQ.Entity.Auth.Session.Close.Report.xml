@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Auth\Session\Close\Report" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="WorkSessionContext" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Auth\Session\Close\WorkSessionContext" serialized-name="WorkSessionContext" access-type="public_method" accessor-getter="getWorkSessionContext" accessor-setter="setWorkSessionContext"/>
+		<property name="InitialReport" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Auth\Session\Close\InitialReport" serialized-name="InitialReport" access-type="public_method" accessor-getter="getInitialReport" accessor-setter="setInitialReport"/>
+		<property name="FinalReport" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Auth\Session\Close\FinalReport" serialized-name="FinalReport" access-type="public_method" accessor-getter="getFinalReport" accessor-setter="setFinalReport"/>
+		<property name="WorkSessionReport" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Auth\Session\Close\WorkSessionReport" serialized-name="WorkSessionReport" access-type="public_method" accessor-getter="getWorkSessionReport" accessor-setter="setWorkSessionReport"/>
+		<property name="WorkSessionCarrierReports" expose="true" type="ArrayCollection&lt;Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Auth\Session\Close\WorkSessionCarrierReports&gt;" serialized-name="WorkSessionCarrierReports" access-type="public_method" accessor-getter="getWorkSessionCarrierReports" accessor-setter="setWorkSessionCarrierReports"/>
+		<property name="ExpectedFirstOnBalanceBlankIdentity" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Auth\Session\Close\BlankIdentity" serialized-name="ExpectedFirstOnBalanceBlankIdentity" access-type="public_method" accessor-getter="getExpectedFirstOnBalanceBlankIdentity" accessor-setter="setExpectedFirstOnBalanceBlankIdentity"/>
+	</class>
+</serializer>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\ConfirmBooking\TerminalInfo" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="TerminalName" expose="true" type="string" serialized-name="TerminalName" access-type="public_method" accessor-getter="getTerminalName" accessor-setter="setTerminalName"/>
+		<property name="TerminalZNKKM" expose="true" type="string" serialized-name="TerminalZNKKM" access-type="public_method" accessor-getter="getTerminalZNKKM" accessor-setter="setTerminalZNKKM"/>
+		<property name="BranchBIN" expose="true" type="string" serialized-name="BranchBIN" access-type="public_method" accessor-getter="getBranchBIN" accessor-setter="setBranchBIN"/>
+		<property name="ChannelAddress" expose="true" type="string" serialized-name="ChannelAddress" access-type="public_method" accessor-getter="getChannelAddress" accessor-setter="setChannelAddress"/>
+	</class>
+</serializer>

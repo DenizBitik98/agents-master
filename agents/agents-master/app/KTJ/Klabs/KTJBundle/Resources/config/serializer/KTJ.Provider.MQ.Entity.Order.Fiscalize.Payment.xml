@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Order\Fiscalize\Payment" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="Terminal" expose="true" type="string" serialized-name="Terminal" access-type="public_method" accessor-getter="getTerminal" accessor-setter="setTerminal"/>
+		<property name="PaymentTimestamp" expose="true" type="DateTime&lt;'Y-m-d\TH:i:s'&gt;" serialized-name="PaymentTimestamp" access-type="public_method" accessor-getter="getPaymentTimestamp" accessor-setter="setPaymentTimestamp"/>
+		<property name="Service" expose="true" type="integer" serialized-name="Service" access-type="public_method" accessor-getter="getService" accessor-setter="setService"/>
+		<property name="Requisite" expose="true" type="string" serialized-name="Requisite" access-type="public_method" accessor-getter="getRequisite" accessor-setter="setRequisite"/>
+		<property name="Amount" expose="true" type="float" serialized-name="Amount" access-type="public_method" accessor-getter="getAmount" accessor-setter="setAmount"/>
+		<property name="Comission" expose="true" type="float" serialized-name="Comission" access-type="public_method" accessor-getter="getComission" accessor-setter="setComission"/>
+		<property name="Signature" expose="true" type="string" serialized-name="Signature" access-type="public_method" accessor-getter="getSignature" accessor-setter="setSignature"/>
+	</class>
+</serializer>

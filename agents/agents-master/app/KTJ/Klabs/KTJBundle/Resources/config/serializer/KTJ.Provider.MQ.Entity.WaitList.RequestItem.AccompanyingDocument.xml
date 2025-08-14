@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\AccompanyingDocument" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="DocumentNumber" expose="true" type="string" serialized-name="DocumentNumber" access-type="public_method" accessor-getter="getDocumentNumber" accessor-setter="setDocumentNumber"/>
+		<property name="DateIssued" expose="true" type="DateTime&lt;'Y-m-d\TH:i:s'&gt;" serialized-name="DateIssued" access-type="public_method" accessor-getter="getDateIssued" accessor-setter="setDateIssued"/>
+	</class>
+</serializer>

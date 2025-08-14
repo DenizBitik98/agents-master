@@ -1,0 +1,44 @@
+<?php
+
+
+namespace App\KTJ\Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Order\Fiscalize;
+
+/**
+ * Class OrderExpress
+ * @package Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Order\Fiscalize
+ */
+class OrderExpress
+{
+    /**
+     * @var null|string $Value
+     */
+    protected $Value;
+
+    /**
+     * OrderExpress constructor.
+     * @param string|null $Value
+     */
+    public function __construct(?string $Value = null)
+    {
+        $this->setValue($Value);
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getValue(): ?string
+    {
+        return $this->Value;
+    }
+
+    /**
+     * @param string|null $Value
+     * @return OrderExpress
+     */
+    public function setValue(?string $Value): OrderExpress
+    {
+        $this->Value = $Value;
+
+        return $this;
+    }
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Order\Reserve\PaymentInfo" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="TicketExpressId" expose="true" type="string" serialized-name="TicketExpressId" access-type="public_method" accessor-getter="getTicketExpressId" accessor-setter="setTicketExpressId"/>
+		<property name="FiscalNumber" expose="true" type="string" serialized-name="FiscalNumber" access-type="public_method" accessor-getter="getFiscalNumber" accessor-setter="setFiscalNumber"/>
+		<property name="PaymentNumber" expose="true" type="string" serialized-name="PaymentNumber" access-type="public_method" accessor-getter="getPaymentNumber" accessor-setter="setPaymentNumber"/>
+		<property name="RNM" expose="true" type="string" serialized-name="RNM" access-type="public_method" accessor-getter="getRNM" accessor-setter="setRNM"/>
+		<property name="FiscalDataOperator" expose="true" type="string" serialized-name="FiscalDataOperator" access-type="public_method" accessor-getter="getFiscalDataOperator" accessor-setter="setFiscalDataOperator"/>
+	</class>
+</serializer>

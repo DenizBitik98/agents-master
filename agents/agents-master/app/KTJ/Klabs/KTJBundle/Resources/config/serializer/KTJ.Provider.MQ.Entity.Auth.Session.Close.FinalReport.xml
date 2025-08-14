@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Auth\Session\Close\FinalReport" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="TransactionId" expose="true" type="int" serialized-name="TransactionId" access-type="public_method" accessor-getter="getTransactionId" accessor-setter="setTransactionId"/>
+		<property name="ReportTimestamp" expose="true" type="DateTime&lt;'Y-m-d\TH:i:s'&gt;" serialized-name="ReportTimestamp" access-type="public_method" accessor-getter="getReportTimestamp" accessor-setter="setReportTimestamp"/>
+		<property name="LastBlankIdentity" expose="true" type="string" serialized-name="LastBlankIdentity" access-type="public_method" accessor-getter="getLastBlankIdentity" accessor-setter="setLastBlankIdentity"/>
+		<property name="CashierName" expose="true" type="string" serialized-name="CashierName" access-type="public_method" accessor-getter="getCashierName" accessor-setter="setCashierName"/>
+		<property name="SalePointNumber" expose="true" type="string" serialized-name="SalePointNumber" access-type="public_method" accessor-getter="getSalePointNumber" accessor-setter="setSalePointNumber"/>
+		<property name="SalePointTerminalNumber" expose="string" type="float" serialized-name="SalePointTerminalNumber" access-type="public_method" accessor-getter="getSalePointTerminalNumber" accessor-setter="setSalePointTerminalNumber"/>
+		<property name="UsedBlanksCount" expose="true" type="int" serialized-name="UsedBlanksCount" access-type="public_method" accessor-getter="getUsedBlanksCount" accessor-setter="setUsedBlanksCount"/>
+		<property name="DamagedBlanksCount" expose="true" type="int" serialized-name="DamagedBlanksCount" access-type="public_method" accessor-getter="getDamagedBlanksCount" accessor-setter="setDamagedBlanksCount"/>
+		<property name="SoldTicketsCount" expose="true" type="int" serialized-name="SoldTicketsCount" access-type="public_method" accessor-getter="getSoldTicketsCount" accessor-setter="setSoldTicketsCount"/>
+		<property name="SoldTicketSeatsCount" expose="true" type="int" serialized-name="SoldTicketSeatsCount" access-type="public_method" accessor-getter="getSoldTicketSeatsCount" accessor-setter="setSoldTicketSeatsCount"/>
+		<property name="SoldTicketsCashSum" expose="true" type="float" serialized-name="SoldTicketsCashSum" access-type="public_method" accessor-getter="getSoldTicketsCashSum" accessor-setter="setSoldTicketsCashSum"/>
+		<property name="SoldTicketsNonCashSum" expose="true" type="float" serialized-name="SoldTicketsNonCashSum" access-type="public_method" accessor-getter="getSoldTicketsNonCashSum" accessor-setter="setSoldTicketsNonCashSum"/>
+		<property name="SoldTicketsCommissionCashSum" expose="true" type="float" serialized-name="SoldTicketsCommissionCashSum" access-type="public_method" accessor-getter="getSoldTicketsCommissionCashSum" accessor-setter="setSoldTicketsCommissionCashSum"/>
+		<property name="SoldTicketsCommissionNonCashSum" expose="true" type="float" serialized-name="SoldTicketsCommissionNonCashSum" access-type="public_method" accessor-getter="getSoldTicketsCommissionNonCashSum" accessor-setter="setSoldTicketsCommissionNonCashSum"/>
+		<property name="ReturnedTicketsCount" expose="true" type="int" serialized-name="ReturnedTicketsCount" access-type="public_method" accessor-getter="getReturnedTicketsCount" accessor-setter="setReturnedTicketsCount"/>
+		<property name="ReturnedTicketsCommissionCashSum" expose="true" type="float" serialized-name="ReturnedTicketsCommissionCashSum" access-type="public_method" accessor-getter="getReturnedTicketsCommissionCashSum" accessor-setter="setReturnedTicketsCommissionCashSum"/>
+		<property name="SuburbUsedBlanksCount" expose="true" type="int" serialized-name="SuburbUsedBlanksCount" access-type="public_method" accessor-getter="getSuburbUsedBlanksCount" accessor-setter="setSuburbUsedBlanksCount"/>
+		<property name="SuburbDamagedBlanksCount" expose="true" type="int" serialized-name="SuburbDamagedBlanksCount" access-type="public_method" accessor-getter="getSuburbDamagedBlanksCount" accessor-setter="setSuburbDamagedBlanksCount"/>
+		<property name="SuburbSoldTicketsCount" expose="true" type="int" serialized-name="SuburbSoldTicketsCount" access-type="public_method" accessor-getter="getSuburbSoldTicketsCount" accessor-setter="setSuburbSoldTicketsCount"/>
+		<property name="SuburbSoldTicketsCashSum" expose="true" type="float" serialized-name="SuburbSoldTicketsCashSum" access-type="public_method" accessor-getter="getSuburbSoldTicketsCashSum" accessor-setter="setSuburbSoldTicketsCashSum"/>
+		<property name="SuburbSoldTicketsCommissionCashSum" expose="true" type="float" serialized-name="SuburbSoldTicketsCommissionCashSum" access-type="public_method" accessor-getter="getSuburbSoldTicketsCommissionCashSum" accessor-setter="setSuburbSoldTicketsCommissionCashSum"/>
+		<property name="GlobalSoldTicketsCashSum" expose="true" type="float" serialized-name="GlobalSoldTicketsCashSum" access-type="public_method" accessor-getter="getGlobalSoldTicketsCashSum" accessor-setter="setGlobalSoldTicketsCashSum"/>
+		<property name="GlobalSoldTicketsNonCashSum" expose="true" type="float" serialized-name="GlobalSoldTicketsNonCashSum" access-type="public_method" accessor-getter="getGlobalSoldTicketsNonCashSum" accessor-setter="setGlobalSoldTicketsNonCashSum"/>
+		<property name="GlobalSoldTicketsCommissionCashSum" expose="true" type="float" serialized-name="GlobalSoldTicketsCommissionCashSum" access-type="public_method" accessor-getter="getGlobalSoldTicketsCommissionCashSum" accessor-setter="setGlobalSoldTicketsCommissionCashSum"/>
+		<property name="GlobalSoldTicketsCommissionNonCashSum" expose="true" type="float" serialized-name="GlobalSoldTicketsCommissionNonCashSum" access-type="public_method" accessor-getter="getGlobalSoldTicketsCommissionNonCashSum" accessor-setter="setGlobalSoldTicketsCommissionNonCashSum"/>
+		<property name="CreditDepartmentsSum" expose="true" type="float" serialized-name="CreditDepartmentsSum" access-type="public_method" accessor-getter="getCreditDepartmentsSum" accessor-setter="setCreditDepartmentsSum"/>
+		<property name="PreferencePermitsCount" expose="true" type="int" serialized-name="PreferencePermitsCount" access-type="public_method" accessor-getter="getPreferencePermitsCount" accessor-setter="setPreferencePermitsCount"/>
+	</class>
+</serializer>

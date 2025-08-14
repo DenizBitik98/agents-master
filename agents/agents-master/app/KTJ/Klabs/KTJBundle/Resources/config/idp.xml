@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="Klabs\KTJBundle\IdP\IdPClientInterface"
+                 class="Klabs\KTJBundle\IdP\Client\DefaultClient\DefaultIdPClient">
+            <call method="setHttpClient">
+                <argument type="service" id='eight_points_guzzle.client.api_idp'/>
+            </call>
+            <call method="setEventDispatcher">
+                <argument type="service" id="event_dispatcher"/>
+            </call>
+            <call method="setUrl">
+                <argument>%idp_get_token_url%</argument>
+            </call>
+        </service>
+        <!-- Event subscriber -->
+        <service id="Klabs\KTJBundle\IdP\Client\DefaultClient\EventSubscriber\IdPCallCookieEventSubscriber">
+            <call method="setCacheAdapter">
+                <argument type="service" id="app.cache.default"/>
+            </call>
+            <call method="setIdpCookieStorageKey">
+                <argument>%idp_cookie_storage_name%</argument>
+            </call>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+    </services>
+</container>

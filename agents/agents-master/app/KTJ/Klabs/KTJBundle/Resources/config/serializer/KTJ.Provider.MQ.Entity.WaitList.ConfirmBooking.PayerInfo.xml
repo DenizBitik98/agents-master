@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\ConfirmBooking\PayerInfo" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="Name" expose="true" type="string" serialized-name="Name" access-type="public_method" accessor-getter="getName" accessor-setter="setName"/>
+		<property name="Bin" expose="true" type="string" serialized-name="Bin" access-type="public_method" accessor-getter="getBin" accessor-setter="setBin"/>
+		<property name="NDSCertificate" expose="true" type="string" serialized-name="NDSCertificate" access-type="public_method" accessor-getter="getNDSCertificate" accessor-setter="setNDSCertificate"/>
+		<property name="IsAgent" expose="true" type="bool" serialized-name="IsAgent" access-type="public_method" accessor-getter="getIsAgent" accessor-setter="setIsAgent"/>
+	</class>
+</serializer>

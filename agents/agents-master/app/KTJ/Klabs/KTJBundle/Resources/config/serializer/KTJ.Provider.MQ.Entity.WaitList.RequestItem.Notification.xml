@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\Notification" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="PersonName" expose="true" type="string" serialized-name="PersonName" access-type="public_method" accessor-getter="getPersonName" accessor-setter="setPersonName"/>
+		<property name="EmailRequestDto" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\Email" serialized-name="Email" access-type="public_method" accessor-getter="getEmailRequestDto" accessor-setter="setEmailRequestDto"/>
+		<property name="PhoneRequestDto" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\Phone" serialized-name="Phone" access-type="public_method" accessor-getter="getPhoneRequestDto" accessor-setter="setPhoneRequestDto"/>
+	</class>
+</serializer>

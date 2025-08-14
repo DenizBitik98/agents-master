@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\GetItem\Blank" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="PassengerInfo" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\GetItem\PassengerInfo" serialized-name="PassengerInfo" access-type="public_method" accessor-getter="getPassengerInfo" accessor-setter="setPassengerInfo"/>
+		<property name="PassengerDiscountCardInfo" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\GetItem\PassengerDiscountCardInfo" serialized-name="PassengerDiscountCardInfo" access-type="public_method" accessor-getter="getPassengerDiscountCardInfo" accessor-setter="setPassengerDiscountCardInfo"/>
+	</class>
+</serializer>

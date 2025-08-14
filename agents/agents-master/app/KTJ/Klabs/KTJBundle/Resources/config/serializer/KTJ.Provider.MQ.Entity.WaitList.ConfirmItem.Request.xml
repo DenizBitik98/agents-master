@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\ConfirmItem\Request" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="Identity" expose="true" type="integer" serialized-name="Identity" access-type="public_method" accessor-getter="getIdentity" accessor-setter="setIdentity"/>
+		<property name="ProtectionCode" expose="true" type="string" serialized-name="ProtectionCode" access-type="public_method" accessor-getter="getProtectionCode" accessor-setter="setProtectionCode"/>
+	</class>
+</serializer>

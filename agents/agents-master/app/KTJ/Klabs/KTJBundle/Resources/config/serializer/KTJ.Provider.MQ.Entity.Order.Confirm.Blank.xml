@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Order\Confirm\Blank" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="Identifier" expose="true" type="string" serialized-name="Identifier" access-type="public_method" accessor-getter="getIdentifier" accessor-setter="setIdentifier"/>
+		<property name="ParentIdentifier" expose="true" type="string" serialized-name="ParentIdentifier" access-type="public_method" accessor-getter="getParentIdentifier" accessor-setter="setParentIdentifier"/>
+		<property name="SeatsPerBlankCount" expose="true" type="integer" serialized-name="SeatsPerBlankCount" access-type="public_method" accessor-getter="getSeatsPerBlankCount" accessor-setter="setSeatsPerBlankCount"/>
+		<property name="IsGroup" expose="true" type="bool" serialized-name="IsGroup" access-type="public_method" accessor-getter="getIsGroup" accessor-setter="setIsGroup"/>
+		<property name="TransportCard" expose="true" type="string" serialized-name="TransportCard" access-type="public_method" accessor-getter="getTransportCard" accessor-setter="setTransportCard"/>
+		<property name="PassengerInfo" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Order\Confirm\PassengerInfo" serialized-name="PassengerInfo" access-type="public_method" accessor-getter="getPassengerInfo" accessor-setter="setPassengerInfo"/>
+	</class>
+</serializer>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\AdditionalServiceInfoResponse" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="Id" expose="true" type="integer" serialized-name="Id" access-type="public_method" accessor-getter="getId" accessor-setter="setId"/>
+		<property name="ServiceIdentity" expose="true" type="string" serialized-name="ServiceIdentity" access-type="public_method" accessor-getter="getServiceIdentity" accessor-setter="setServiceIdentity"/>
+		<property name="Tariff" expose="true" type="float" serialized-name="Tariff" access-type="public_method" accessor-getter="getTariff" accessor-setter="setTariff"/>
+		<property name="FiscalNumber" expose="true" type="string" serialized-name="FiscalNumber" access-type="public_method" accessor-getter="getFiscalNumber" accessor-setter="setFiscalNumber"/>
+		<property name="TerminalZNKKM" expose="true" type="string" serialized-name="TerminalZNKKM" access-type="public_method" accessor-getter="getTerminalZNKKM" accessor-setter="setTerminalZNKKM"/>
+		<property name="BaseDocumentIdentity" expose="true" type="string" serialized-name="BaseDocumentIdentity" access-type="public_method" accessor-getter="getBaseDocumentIdentity" accessor-setter="setBaseDocumentIdentity"/>
+		<property name="AdditionalServiceType" expose="true" type="integer" serialized-name="AdditionalServiceType" access-type="public_method" accessor-getter="getAdditionalServiceType" accessor-setter="setAdditionalServiceType"/>
+		<property name="TimeBounds" expose="true" type="integer" serialized-name="TimeBounds" access-type="public_method" accessor-getter="getTimeBounds" accessor-setter="setTimeBounds"/>
+		<property name="ServiceQuantity" expose="true" type="integer" serialized-name="ServiceQuantity" access-type="public_method" accessor-getter="getServiceQuantity" accessor-setter="setServiceQuantity"/>
+		<property name="StartTimestamp" expose="true" type="DateTime&lt;'Y-m-d\TH:i:s'&gt;" serialized-name="StartTimestamp" access-type="public_method" accessor-getter="getStartTimestamp" accessor-setter="setStartTimestamp"/>
+		<property name="EndTimestamp" expose="true" type="DateTime&lt;'Y-m-d\TH:i:s'&gt;" serialized-name="EndTimestamp" access-type="public_method" accessor-getter="getEndTimestamp" accessor-setter="setEndTimestamp"/>
+		<property name="PaymentType" expose="true" type="integer" serialized-name="PaymentType" access-type="public_method" accessor-getter="getPaymentType" accessor-setter="setPaymentType"/>
+	</class>
+</serializer>

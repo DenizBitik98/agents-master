@@ -1,0 +1,294 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+	<parameters>
+		<parameter key="ktj.mq.express_commit.commit.url">ExpressCommit/Commit</parameter>
+		<parameter key="ktj.mq.auth.default.login">%mq_default_login%</parameter>
+		<parameter key="ktj.mq.auth.default.password">%mq_default_password%</parameter>
+		<parameter key="ktj.mq.auth.default.machine_key">%mq_default_machine_key%</parameter>
+		<parameter key="ktj.mq.auth.session.open.url">CashierWorkSession/StartWorkSession</parameter>
+		<parameter key="ktj.mq.auth.session.close.url">CashierWorkSession/FinishWorkSession</parameter>
+		<parameter key="ktj.mq.auth.session.open.retry.url">CashierWorkSession/RetryStartWorkSession</parameter>
+		<parameter key="ktj.mq.auth.session.close.retry.url">CashierWorkSession/RetryFinishWorkSession</parameter>
+		<parameter key="ktj.mq.queue.request_item.url">Waitlist/RequestItem</parameter>
+		<parameter key="ktj.mq.queue.confirm_item.url">Waitlist/ConfirmItem</parameter>
+		<parameter key="ktj.mq.queue.confirm_booking.url">Waitlist/ConfirmBooking</parameter>
+		<parameter key="ktj.mq.queue.get_item.url">Waitlist/GetItem</parameter>
+		<parameter key="ktj.mq.order.reservation.retry_reserve.url">TicketsBooking/RetryConfirmBooking</parameter>
+		<parameter key="ktj.mq.order.reservation.reserve.url">TicketsBooking/ConfirmBooking</parameter>
+		<parameter key="ktj.mq.order.reservation.retry_confirm.url">TicketSale/RetryConfirmOrder</parameter>
+		<parameter key="ktj.mq.order.reservation.confirm.url">TicketSale/ConfirmOrder</parameter>
+		<parameter key="ktj.mq.order.reservation.fiscalize.url">TicketSale/FiscalizeSale</parameter>
+		<parameter key="ktj.mq.order.reservation.finalize.url">TicketSale/FinalizeOrderSale</parameter>
+		<parameter key="ktj.mq.order.reservation.cancel.url">TicketCancellation/CancelOrder</parameter>
+		<parameter key="ktj.mq.order.reservation.retry_cancel.url">TicketCancellation/RetryCancelOrder</parameter>
+		<parameter key="ktj.mq.report.wait_list.list_terminals.url">WaitlistReport/GetWaitlistDisplayTerminals</parameter>
+	</parameters>
+	<services>
+		<service id="klabs_ktj.ktj_provider_mq_controller_express_commit.express_commit_controller" class="Klabs\KTJBundle\KTJ\Provider\MQ\Controller\ExpressCommit\ExpressCommitController">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq.provider"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+			<call method="setCommitUrl">
+				<argument>%ktj.mq.express_commit.commit.url%</argument>
+			</call>
+			<call method="setErrorHandler">
+				<argument type="service" id="klabs.mq.error.default"/>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_mq_controller_auth.auth_controller" class="Klabs\KTJBundle\KTJ\Provider\MQ\Controller\Auth\AuthController">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq.provider"/>
+			</call>
+			<call method="setAuthUrl">
+				<argument>%dcts_uri_auth%</argument>
+			</call>
+			<call method="setLogin">
+				<argument>%ktj.mq.auth.default.login%</argument>
+			</call>
+			<call method="setPassword">
+				<argument>%ktj.mq.auth.default.password%</argument>
+			</call>
+			<call method="setMachineKey">
+				<argument>%ktj.mq.auth.default.machine_key%</argument>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_mq_controller_auth.session_controller" class="Klabs\KTJBundle\KTJ\Provider\MQ\Controller\Auth\SessionController">
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq.provider"/>
+			</call>
+			<call method="setErrorHandler">
+				<argument type="service" id="klabs.mq.error.default"/>
+			</call>
+			<call method="setOpenUri">
+				<argument>%ktj.mq.auth.session.open.url%</argument>
+			</call>
+			<call method="setCloseUri">
+				<argument>%ktj.mq.auth.session.close.url%</argument>
+			</call>
+			<call method="setRetryOpenUri">
+				<argument>%ktj.mq.auth.session.open.retry.url%</argument>
+			</call>
+			<call method="setRetryCloseUri">
+				<argument>%ktj.mq.auth.session.close.retry.url%</argument>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_mq_controller_report.report_controller" class="Klabs\KTJBundle\KTJ\Provider\MQ\Controller\Report\ReportController">
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq.provider"/>
+			</call>
+			<call method="setReportTicketController">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq_controller_report.ticket_controller"/>
+			</call>
+			<call method="setReportStationController">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq_controller_report.station_controller"/>
+			</call>
+			<call method="setWaitListController">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq_controller_report.wait_list_controller"/>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_mq_controller_report.ticket_controller" class="Klabs\KTJBundle\KTJ\Provider\MQ\Controller\Report\TicketController">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq.provider"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+			<call method="setErrorHandler">
+				<argument type="service" id="klabs.mq.error.default"/>
+			</call>
+			<call method="setReportStatusUri">
+				<argument>%mq_uri_ticket_status%</argument>
+			</call>
+			<call method="setReportTerminalInfoUri">
+				<argument>%mq_uri_ticket_terminal_info%</argument>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_mq_controller_report.station_controller" class="Klabs\KTJBundle\KTJ\Provider\MQ\Controller\Report\StationController">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq.provider"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+			<call method="setDataUri">
+				<argument>%dcts_uri_station_list%</argument>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_mq_controller_queue.queue_controller" class="Klabs\KTJBundle\KTJ\Provider\MQ\Controller\Queue\QueueController">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq.provider"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+			<call method="setErrorHandler">
+				<argument type="service" id="klabs.mq.error.default"/>
+			</call>
+			<call method="setRequestItemUrl">
+				<argument>%ktj.mq.queue.request_item.url%</argument>
+			</call>
+			<call method="setConfirmItemUrl">
+				<argument>%ktj.mq.queue.confirm_item.url%</argument>
+			</call>
+			<call method="setGetItemUrl">
+				<argument>%ktj.mq.queue.get_item.url%</argument>
+			</call>
+			<call method="setConfirmBookingUrl">
+				<argument>%ktj.mq.queue.confirm_booking.url%</argument>
+			</call>
+		</service>
+		<service class="Klabs\KTJBundle\KTJ\Provider\MQ\Controller\Order\OrderController" id="klabs_ktj.ktj_provider_mq_controller_order.order_controller">
+			<call method="setReserveController">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq_controller_order.reserve_controller"/>
+			</call>
+			<call method="setConfirmController">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq_controller_order.confirm_controller"/>
+			</call>
+			<call method="setFiscalizeController">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq_controller_order.fiscalize_controller"/>
+			</call>
+			<call method="setFinalizeController">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq_controller_order.finalize_controller"/>
+			</call>
+			<call method="setCancelController">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq_controller_order.cancel_controller"/>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_mq_controller_order.reserve_controller" class="Klabs\KTJBundle\KTJ\Provider\MQ\Controller\Order\ReserveController">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq.provider"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+			<call method="setErrorHandler">
+				<argument type="service" id="klabs.mq.error.default"/>
+			</call>
+			<call method="setRetryReserveUrl">
+				<argument>%ktj.mq.order.reservation.retry_reserve.url%</argument>
+			</call>
+			<call method="setReserveUri">
+				<argument>%ktj.mq.order.reservation.reserve.url%</argument>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_mq_controller_order.confirm_controller" class="Klabs\KTJBundle\KTJ\Provider\MQ\Controller\Order\ConfirmController">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq.provider"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+			<call method="setErrorHandler">
+				<argument type="service" id="klabs.mq.error.default"/>
+			</call>
+			<call method="setRetryConfirmationUrl">
+				<argument>%ktj.mq.order.reservation.retry_confirm.url%</argument>
+			</call>
+			<call method="setConfirmationUrl">
+				<argument>%ktj.mq.order.reservation.confirm.url%</argument>
+			</call>
+		</service>
+		<service id="klabs_ktj.ktj_provider_mq_controller_order.cancel_controller" class="Klabs\KTJBundle\KTJ\Provider\MQ\Controller\Order\CancelController">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq.provider"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+			<call method="setErrorHandler">
+				<argument type="service" id="klabs.mq.error.default"/>
+			</call>
+			<call method="setCancelUrl">
+				<argument>%ktj.mq.order.reservation.cancel.url%</argument>
+			</call>
+			<call method="setRetryCancelUrl">
+				<argument>%ktj.mq.order.reservation.retry_cancel.url%</argument>
+			</call>
+		</service>
+		<service class="Klabs\KTJBundle\KTJ\Provider\MQ\Controller\Order\FiscalizeController" id="klabs_ktj.ktj_provider_mq_controller_order.fiscalize_controller">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq.provider"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+			<call method="setErrorHandler">
+				<argument type="service" id="klabs.mq.error.default"/>
+			</call>
+			<call method="setFiscalizeUrl">
+				<argument>%ktj.mq.order.reservation.fiscalize.url%</argument>
+			</call>
+		</service>
+		<service class="Klabs\KTJBundle\KTJ\Provider\MQ\Controller\Order\FinalizeController" id="klabs_ktj.ktj_provider_mq_controller_order.finalize_controller">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq.provider"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+			<call method="setErrorHandler">
+				<argument type="service" id="klabs.mq.error.default"/>
+			</call>
+			<call method="setFinalizeUrl">
+				<argument>%ktj.mq.order.reservation.finalize.url%</argument>
+			</call>
+		</service>
+		<service class="Klabs\KTJBundle\KTJ\Provider\MQ\Controller\Report\WaitListController" id="klabs_ktj.ktj_provider_mq_controller_report.wait_list_controller">
+			<call method="setEventDispatcher">
+				<argument type="service" id="event_dispatcher"/>
+			</call>
+			<call method="setProvider">
+				<argument type="service" id="klabs_ktj.ktj_provider_mq.provider"/>
+			</call>
+			<call method="setSerializer">
+				<argument type="service" id="jms_serializer"/>
+			</call>
+			<call method="setErrorHandler">
+				<argument type="service" id="klabs.mq.error.default"/>
+			</call>
+			<call method="setDisplayTerminalsUrl">
+				<argument>%ktj.mq.report.wait_list.list_terminals.url%</argument>
+			</call>
+		</service>
+	</services>
+</container>

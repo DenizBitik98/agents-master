@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Report\WaitList\TerminalInformation" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="Id" expose="true" type="int" serialized-name="Id" access-type="public_method" accessor-getter="getId" accessor-setter="setId"/>
+		<property name="Name" expose="true" type="string" serialized-name="Name" access-type="public_method" accessor-getter="getName" accessor-setter="setName"/>
+		<property name="Address" expose="true" type="string" serialized-name="Address" access-type="public_method" accessor-getter="getAddress" accessor-setter="setAddress"/>
+		<property name="MachineKey" expose="true" type="string" serialized-name="MachineKey" access-type="public_method" accessor-getter="getMachineKey" accessor-setter="setMachineKey"/>
+		<property name="Location" expose="true" type="string" serialized-name="Location" access-type="public_method" accessor-getter="getLocation" accessor-setter="setLocation"/>
+		<property name="IsActive" expose="true" type="bool" serialized-name="IsActive" access-type="public_method" accessor-getter="getIsActive" accessor-setter="setIsActive"/>
+		<property name="DateModified" expose="true" type="DateTime&lt;'Y-m-d\TH:i:s.u'&gt;" serialized-name="DateModified" access-type="public_method" accessor-getter="getDateModified" accessor-setter="setDateModified"/>
+		<property name="CreationDate" expose="true" type="DateTime&lt;'Y-m-d\TH:i:s.u'&gt;" serialized-name="CreationDate" access-type="public_method" accessor-getter="getCreationDate" accessor-setter="setCreationDate"/>
+	</class>
+</serializer>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\WaitList\RequestItem\Period" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="From" expose="true" type="DateTime&lt;'Y-m-d\TH:i:s'&gt;" serialized-name="From" access-type="public_method" accessor-getter="getFrom" accessor-setter="setFrom"/>
+		<property name="To" expose="true" type="DateTime&lt;'Y-m-d\TH:i:s'&gt;" serialized-name="To" access-type="public_method" accessor-getter="getTo" accessor-setter="setTo"/>
+	</class>
+</serializer>

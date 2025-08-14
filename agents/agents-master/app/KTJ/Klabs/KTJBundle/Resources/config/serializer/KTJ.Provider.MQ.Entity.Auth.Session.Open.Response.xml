@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+	<class name="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Auth\Session\Open\Response" exclusion-policy="ALL">
+		<xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+		<xml-discriminator attribute="true" cdata="false" namespace=""/>
+		<property name="WorkSessionContext" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Auth\Session\Open\WorkSessionContext" serialized-name="WorkSessionContext" access-type="public_method" accessor-getter="getWorkSessionContext" accessor-setter="setWorkSessionContext"/>
+		<property name="InitialReport" expose="true" type="Klabs\KTJBundle\KTJ\Provider\MQ\Entity\Auth\Session\Open\InitialReport" serialized-name="InitialReport" access-type="public_method" accessor-getter="getInitialReport" accessor-setter="setInitialReport"/>
+	</class>
+</serializer>

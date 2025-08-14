@@ -1,0 +1,106 @@
+<?php
+
+return [
+    'blank.electronic travel document' => 'электронный проездной документ',
+    'order.number' => 'номер заказа',
+    'blank.travel year' => 'год совершения поездки',
+    'blank.passenger count' => 'количество пассажиров',
+    'train.departure.from' => 'от',
+    'train.arrive.to' => 'до',
+    'blank.service class' => 'класс обслуживания',
+    'blank.carAirConditioning' => 'кондиционер',
+    'blank.ecoFriendlyToilets' => 'биотуалет',
+    'blank.departure' => 'отправление',
+    'blank.arrive' => 'прибытие',
+    'train.train' => 'поезд',
+    'car.car' => 'вагон',
+    'seat.seat' => 'место',
+    'invoice.ticket kind' => 'тип билета',
+    'order.tariff types.adult' => 'полный',
+    'order.tariff types.discount' => 'дисконтная карта',
+    'order.tariff types.inv' => 'ИНВ',
+    'order.tariff types.kid' => 'детский',
+    'invoice.valuation kind' => 'вид расчета',
+    'order.payment types.cash' => 'наличный',
+    'order.payment types.non cash' => 'безналичный',
+    'order.bedding' => 'постельные принадлежности',
+    'car.carrier' => 'перевозчик',
+    'invoice.bin' => 'бин',
+    'invoice.nds property' => 'Св-во НДС',
+    'order.order number' => 'номер ордера',
+    'seat.cost' => 'цена билета',
+    'blank.tariffType' => 'тариф',
+    'ticket.ticket' => 'билет',
+    'blank.berth' => 'плацкарт',
+    'order.service cost' => 'сервис',
+    'order.status of electronic ticket' => 'статус электронного билета',
+    'order.electronic registration passed' => 'пройдена электронная регистрация',
+    'order.electronic registration not passed' => 'не пройдена электронная регистрация',
+    'order.date and time of issuing an electronic ticket' => 'дата и время оформления электронного билета',
+    'order.cancellation of electronic registration is possible until' => 'отмена электронной регистрации возможна до',
+    'order.departure and arrival time' => 'время отправления и прибытия',
+    'order.arrival with train' => 'прибытие с поездом',
+    'invoice.duty information' => 'служебная информация',
+    'discount.discount card' => 'дисконтная карта',
+    'order.the doors close automatically 5 minutes before departure' => 'двери закрываются автоматически за 5 минут до отправления поезда',
+    'order.your e-travel document is valid for' => 'ваш электронный проездной документ действителен для посадки в поезд.',
+    'your e-travel document is not valid for' => 'Электронный билет для проезда недействителен. Для проезда в поезде необходимо получить проездной документ (на бланке проездного документа) в билетной кассе на территории Республики Казахстан.',
+
+    'reservation'=>[
+        'timezone'=>[
+            'departure'=>[
+                '100'=>'Время отпр местное',
+                '101'=>' Время отпр. Астана',
+                '102'=>'Время отпр московское'
+            ],
+            'arrival'=>[
+                '100'=>'Время приб местное',
+                '101'=>'Время приб. Астана',
+                '102'=>'Время приб московское'
+            ]
+        ]
+    ],
+
+    'return'=>[
+        'ticket'=>'Билет',
+        'return amount'=>'Сумма возврата',
+        'refund type'=>'Тип возврата',
+        'time before train departure'=>'Время до отъезда',
+        'refund amount'=>'Сумма возврата',
+        'confirm button'=>'Вернуть',
+    ],
+    'invoice'=>[
+        'electronic invoice'=>'электронная квитанция разных сборов',
+        'number'=>'номер квитанции',
+        'ticket number'=>'номер электронного билета',
+        'order number'=>'номер ордера',
+        'name'=>'ФИО',
+        'document number'=>'номер документа',
+        'valuation kind'=>'вид расчета',
+        'ticket'=>'стоимость билета',
+        'return amount'=>'сумма к возврату',
+        'return commission'=>'комиссионный сбор за операцию возврату',
+        'information'=>'информация',
+        'return types'=>[
+            'non cash'=>'безналичными'
+        ],
+        'train'=>'поезд',
+        'car'=>'вагон',
+        'seat'=>'место',
+        'ticket kind'=>'тип билета',
+        'ticket route'=>'маршрут следования',
+        'departure'=>'отправление',
+        'carrier'=>'перевозчик',
+        'bin'=>'бин',
+        'nds property'=>'Св-во НДС',
+        'time until departure'=>'время до отправления поезда с момента возврата',
+        'return time'=>'дата и время возврата',
+        'fks number'=>'финансовый номер ФКС',
+        'terminal'=>'терминал',
+        'duty information'=>'служебная информация',
+        'passenger signature'=>'подпись пассажира',
+        'receipt confirm'=>'Подтверждаю о получении денежных средств в размере',
+        'contact phones'=>'подпись кассира',
+        'kzt'=>'тенге'
+    ]
+];
